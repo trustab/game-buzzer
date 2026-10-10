@@ -18,6 +18,7 @@
 #define RESET_UUID        "12345678-1234-1234-1234-123456789ab2"
 #define ROUND_START_UUID  "12345678-1234-1234-1234-123456789ab3"
 #define STATUS_UUID       "12345678-1234-1234-1234-123456789ab4"
+#define PLAYERS_UUID      "12345678-1234-1234-1234-123456789ab5"
 
 #define STATUS_LED 8            // SuperMini onboard LED, active LOW
 #define STATE_BROADCAST_MS 500  // heartbeat so buttons always know the state
@@ -33,6 +34,7 @@ static const uint8_t BROADCAST_ADDR[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 
 NimBLECharacteristic* buzzerChar;
 NimBLECharacteristic* statusChar;
+NimBLECharacteristic* playersChar;
 
 GameState state = STATE_IDLE;
 uint8_t   winner = 0;
@@ -46,6 +48,7 @@ uint32_t  buzzMs = 0;
 U8G2_SSD1306_72X40_ER_F_HW_I2C oled(U8G2_R0, U8X8_PIN_NONE, OLED_SCL, OLED_SDA);
 volatile bool oledDirty = true;
 uint32_t lastOled = 0;
+uint32_t lastPlayersCheck = 0;
 
 struct PlayerInfo { uint32_t lastSeen; uint16_t battMv; };
 PlayerInfo players[MAX_PLAYERS + 1];   // index 1..MAX_PLAYERS
@@ -152,10 +155,13 @@ void setupBle() {
   NimBLEService* svc = server->createService(SERVICE_UUID);
   buzzerChar = svc->createCharacteristic(BUZZER_STATE_UUID, NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::NOTIFY);
   statusChar = svc->createCharacteristic(STATUS_UUID,       NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::NOTIFY);
+  playersChar = svc->createCharacteristic(PLAYERS_UUID,     NIMBLE_PROPERTY::READ | NIMBLE_PROPERTY::NOTIFY);
   svc->createCharacteristic(RESET_UUID,       NIMBLE_PROPERTY::WRITE | NIMBLE_PROPERTY::WRITE_NR)->setCallbacks(new WriteCB(EV_RESET));
   svc->createCharacteristic(ROUND_START_UUID, NIMBLE_PROPERTY::WRITE | NIMBLE_PROPERTY::WRITE_NR)->setCallbacks(new WriteCB(EV_START));
   buzzerChar->setValue((uint8_t)0);
   statusChar->setValue((uint8_t)STATE_IDLE);
+  uint8_t noPlayers[1 + 2 * MAX_PLAYERS] = {0};
+  playersChar->setValue(noPlayers, sizeof(noPlayers));
   svc->start();
 
   // Name only in the advert: name + a 128-bit UUID doesn't fit in 31 bytes.
@@ -230,6 +236,28 @@ void updateOled() {
   oled.sendBuffer();
 }
 
+// ── Player presence over BLE ──────────────────────────────────────
+// PLAYERS_UUID value: byte 0 = online bitmask (bit 0 = player 1),
+// then uint16 little-endian battery mV per player (0 = unknown / no battery).
+// Checked twice a second; only notified when something changed.
+void updatePlayersChar() {
+  if (millis() - lastPlayersCheck < 500) return;
+  lastPlayersCheck = millis();
+
+  static uint8_t last[1 + 2 * MAX_PLAYERS];
+  uint8_t buf[1 + 2 * MAX_PLAYERS] = {0};
+  for (int p = 1; p <= MAX_PLAYERS; p++) {
+    if (playerOnline(p)) buf[0] |= 1 << (p - 1);
+    buf[1 + 2 * (p - 1)] = players[p].battMv & 0xFF;
+    buf[2 + 2 * (p - 1)] = players[p].battMv >> 8;
+  }
+  if (memcmp(buf, last, sizeof(buf)) == 0) return;
+  memcpy(last, buf, sizeof(buf));
+
+  playersChar->setValue(buf, sizeof(buf));
+  playersChar->notify();
+}
+
 // ── Setup / loop ─────────────────────────────────────────────────
 void setup() {
   Serial.begin(115200);
@@ -294,5 +322,6 @@ void loop() {
   if (millis() - lastBroadcast > STATE_BROADCAST_MS) broadcastState();
   updateLed();
   updateOled();
+  updatePlayersChar();
   delay(1);
 }

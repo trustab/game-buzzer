@@ -41,6 +41,7 @@ const BUZZER_STATE_UUID = "12345678-1234-1234-1234-123456789ab1";
 const RESET_UUID        = "12345678-1234-1234-1234-123456789ab2";
 const ROUND_START_UUID  = "12345678-1234-1234-1234-123456789ab3";
 const STATUS_UUID       = "12345678-1234-1234-1234-123456789ab4";
+const PLAYERS_UUID      = "12345678-1234-1234-1234-123456789ab5";
 
 const PLAYERS = [
   { id: 1, color: "#ff4d6d", glow: "rgba(255,77,109,0.3)",  bg: "#1a0a0e" },
@@ -49,11 +50,29 @@ const PLAYERS = [
   { id: 4, color: "#ff9f4d", glow: "rgba(255,159,77,0.3)",  bg: "#1a120a" },
 ];
 
+// Battery thresholds for 3xAAA (regulator cuts out around 3.5 V).
+// Below NO_BATT_MV the button is on USB or has no divider fitted.
+const NO_BATT_MV = 1000, LOW_BATT_MV = 3600, MID_BATT_MV = 3900;
+
+// null = unknown (not connected, or hub firmware without player presence)
+const NO_PLAYER_INFO = { online: null, battMv: [0, 0, 0, 0] };
+
+// PLAYERS_UUID value: byte 0 = online bitmask (bit 0 = player 1),
+// then uint16 little-endian battery mV per player.
+function parsePlayers(view) {
+  const mask = view.getUint8(0);
+  return {
+    online: PLAYERS.map((_, i) => !!(mask & (1 << i))),
+    battMv: PLAYERS.map((_, i) => view.byteLength >= 3 + 2 * i ? view.getUint16(1 + 2 * i, true) : 0),
+  };
+}
+
 function useBLE() {
   const [connected, setConnected]       = useState(false);
   const [deviceName, setDeviceName]     = useState("");
   const [status, setStatus]             = useState(0);
   const [buzzedPlayer, setBuzzedPlayer] = useState(0);
+  const [players, setPlayers]           = useState(NO_PLAYER_INFO);
   const deviceRef    = useRef(null);
   const resetCharRef = useRef(null);
   const startCharRef = useRef(null);
@@ -70,7 +89,7 @@ function useBLE() {
       });
       deviceRef.current = device;
       device.addEventListener("gattserverdisconnected", () => {
-        setConnected(false); setDeviceName(""); setStatus(0); setBuzzedPlayer(0);
+        setConnected(false); setDeviceName(""); setStatus(0); setBuzzedPlayer(0); setPlayers(NO_PLAYER_INFO);
       });
       const server  = await device.gatt.connect();
       const service = await server.getPrimaryService(SERVICE_UUID);
@@ -89,6 +108,16 @@ function useBLE() {
       });
       const initStatus = await statusChar.readValue();
       setStatus(initStatus.getUint8(0));
+
+      // Optional: older hub firmware doesn't have player presence.
+      try {
+        const playersChar = await service.getCharacteristic(PLAYERS_UUID);
+        await playersChar.startNotifications();
+        playersChar.addEventListener("characteristicvaluechanged", (e) => setPlayers(parsePlayers(e.target.value)));
+        setPlayers(parsePlayers(await playersChar.readValue()));
+      } catch (err) {
+        console.warn("Hub has no player presence characteristic", err);
+      }
 
       resetCharRef.current = await service.getCharacteristic(RESET_UUID);
       startCharRef.current = await service.getCharacteristic(ROUND_START_UUID);
@@ -109,7 +138,7 @@ function useBLE() {
     setStatus(1); setBuzzedPlayer(0);
   }, []);
 
-  return { connected, deviceName, status, buzzedPlayer, connect, disconnect, sendReset, sendStart };
+  return { connected, deviceName, status, buzzedPlayer, players, connect, disconnect, sendReset, sendStart };
 }
 
 function ConnBar({ connected, deviceName, onConnect, onDisconnect }) {
@@ -199,7 +228,27 @@ function StatusDisplay({ status, buzzedPlayer, names }) {
   );
 }
 
-function PlayerCard({ player, name, score, isBuzzed, onNameChange, onScore }) {
+// online: true / false / null (unknown). Battery shown only when a divider reports a voltage.
+function PresenceLabel({ online, battMv }) {
+  if (online === null) return null;
+  let text = "OFFLINE", color = "#333355";
+  if (online && battMv > NO_BATT_MV) {
+    text  = `${(battMv / 1000).toFixed(2)}V`;
+    color = battMv < LOW_BATT_MV ? "#ff4d6d" : battMv < MID_BATT_MV ? "#f0e040" : "#4dff9e";
+  } else if (online) {
+    text = "ONLINE"; color = "#4dff9e99";
+  }
+  return (
+    <span title={online ? "Button is online" : "No signal from this button"} style={{
+      fontSize:"0.58rem", letterSpacing:"0.12em", color, flexShrink:0,
+    }}>
+      {text}
+    </span>
+  );
+}
+
+function PlayerCard({ player, name, score, isBuzzed, online, battMv, onNameChange, onScore }) {
+  const lit = online !== false;   // unknown keeps the normal look
   return (
     <div style={{
       background: isBuzzed ? player.bg : "#0f0f18",
@@ -213,8 +262,10 @@ function PlayerCard({ player, name, score, isBuzzed, onNameChange, onScore }) {
       <div style={{ display:"flex", alignItems:"center", gap:"0.55rem", marginBottom:"0.65rem" }}>
         <div style={{
           width:8, height:8, borderRadius:"50%", flexShrink:0,
-          background: player.color,
-          boxShadow:`0 0 7px ${player.color}`,
+          background: lit ? player.color : "transparent",
+          border: lit ? "none" : `1px solid ${player.color}55`,
+          boxShadow: online ? `0 0 7px ${player.color}` : "none",
+          transition:"all 0.3s",
         }}/>
         <input
           value={name}
@@ -228,6 +279,7 @@ function PlayerCard({ player, name, score, isBuzzed, onNameChange, onScore }) {
             padding:"0.1rem 0", transition:"border-color 0.2s",
           }}
         />
+        <PresenceLabel online={online} battMv={battMv}/>
       </div>
       <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between" }}>
         <span style={{ fontSize:"0.6rem", letterSpacing:"0.2em", color:"#222240", textTransform:"uppercase" }}>
@@ -273,7 +325,7 @@ function LogEntry({ entry }) {
 }
 
 function App() {
-  const { connected, deviceName, status, buzzedPlayer, connect, disconnect, sendReset, sendStart } = useBLE();
+  const { connected, deviceName, status, buzzedPlayer, players, connect, disconnect, sendReset, sendStart } = useBLE();
 
   // localStorage-backed names
   const [names, setNames] = useState(() => {
@@ -305,6 +357,18 @@ function App() {
   }, []);
 
   useEffect(() => { if (connected) addLog(`Connected: ${deviceName}`); }, [connected]);
+
+  // Log buttons coming and going (skip the first reading after connecting)
+  const prevOnline = useRef(null);
+  useEffect(() => {
+    const prev = prevOnline.current;
+    if (prev && players.online) {
+      players.online.forEach((on, i) => {
+        if (on !== prev[i]) addLog(`${names[i] || `Player ${i + 1}`} ${on ? "button online" : "button offline"}`);
+      });
+    }
+    prevOnline.current = players.online;
+  }, [players.online]);
 
   useEffect(() => {
     if (buzzedPlayer > 0) {
@@ -351,6 +415,8 @@ function App() {
                 name={names[i]}
                 score={scores[i]}
                 isBuzzed={buzzedPlayer === player.id}
+                online={players.online ? players.online[i] : null}
+                battMv={players.battMv[i]}
                 onNameChange={(v) => setNames((n) => n.map((x, j) => j === i ? v : x))}
                 onScore={(delta) => setScores((s) => s.map((v, j) => j === i ? Math.max(0, v + delta) : v))}
               />
