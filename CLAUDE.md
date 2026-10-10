@@ -29,8 +29,9 @@ Wireless quiz buzzer system. Each player has a battery-powered button unit. A hu
 ## Toolchain
 - Note: the device will appear in Chrome's picker labelled "Pair", but Web Bluetooth only connects; no OS-level pairing is needed.
 - Arduino IDE / arduino-cli, ESP32 core 3.x (`esp32:esp32`), board "ESP32C3 Dev Module", **USB CDC On Boot: Enabled** (otherwise no Serial output).
-- Hub needs the NimBLE-Arduino 2.x library. Button needs no extra libraries.
-- The sketches have not been compiled yet. API calls were checked against current NimBLE-Arduino and arduino-esp32 source, so expect at most small compile fixes.
+- Hub needs NimBLE-Arduino 2.x and U8g2. Button needs no extra libraries. First U8g2 build is slow (compiles all fonts); later builds are cached.
+- Hub flash usage is ~93% of the default 1.2 MB app partition. If it overflows, switch to a bigger partition scheme (e.g. `PartitionScheme=huge_app` in the FQBN; no OTA used).
+- Hub compiles and runs (flashed and tested over serial). Button sketch not yet compiled.
 
 ## Hardware
 **Button (PoC: 1 unit)** — black ESP32-C3 SuperMini (V1601).
@@ -42,7 +43,7 @@ Wireless quiz buzzer system. Each player has a battery-powered button unit. A hu
 
 **Hub** — purple ESP32-C3 board with 0.42" OLED, powered by USB.
 - Onboard LED on GPIO8 (polarity assumed active LOW; flip in `updateLed()` if wrong).
-- OLED is I2C, likely SDA GPIO5 / SCL GPIO6 (SSD1306-type, 72x40). Not used yet.
+- OLED is I2C, SDA GPIO5 / SCL GPIO6 (assumed), SSD1306 72x40, driven with U8g2 `SSD1306_72X40_ER`. Shows: web link + round (top), READY / timer / winner (middle), per-player online + low-battery cells (bottom).
 - Two diodes (A7) in its power path, so not suitable for battery power. Fine on USB.
 
 ## Protocols
@@ -76,6 +77,5 @@ Wireless quiz buzzer system. Each player has a battery-powered button unit. A hu
 - Button radio stays awake (~80–100 mA, about 15–20 h on 3xAA). No deep sleep while a game runs, since sleeping buttons can't hear round starts.
 - Pairing: idea is long press (~10 s) to enter pairing mode, then register MACs on the hub instead of open broadcast.
 - Send battery level per player over BLE and show green/yellow/red on the web page (low warning near cutoff).
-- Show state / winner on the hub OLED.
 - Support more than 4 players (ESP-NOW handles up to ~20 peers; web page is hardcoded for 4).
 - 3D-printed board bracket: slide-in rails with a snap lip; board is about 20x25x1 mm.

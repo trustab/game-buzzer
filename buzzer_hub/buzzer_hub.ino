@@ -1,6 +1,6 @@
 // buzzer_hub.ino — PoC hub: ESP-NOW from buttons, BLE to the existing web page.
 // Board: ESP32-C3 SuperMini ("ESP32C3 Dev Module", USB CDC On Boot: Enabled)
-// Library: NimBLE-Arduino 2.x
+// Libraries: NimBLE-Arduino 2.x, U8g2 (0.42" 72x40 OLED)
 //
 // BLE side is identical to the old UNO R4 sketch (name "QuizBuzzer", same UUIDs,
 // same byte values), so the React page works unchanged.
@@ -9,6 +9,7 @@
 #include <esp_wifi.h>
 #include <esp_now.h>
 #include <NimBLEDevice.h>
+#include <U8g2lib.h>
 #include "protocol.h"
 
 // ── BLE UUIDs (same as the web page) ──────────────────────────────
@@ -21,7 +22,14 @@
 #define STATUS_LED 8            // SuperMini onboard LED, active LOW
 #define STATE_BROADCAST_MS 500  // heartbeat so buttons always know the state
 
-static const uint8_t BROADCAST[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+#define OLED_SDA 5
+#define OLED_SCL 6
+#define MAX_PLAYERS       4
+#define PLAYER_TIMEOUT_MS 12000   // HELLO every 5 s; two missed = offline
+#define LOW_BATT_MV       3600    // 3xAA; regulator drops out around 3.5 V
+#define NO_BATT_MV        1000    // below this: on USB or no divider fitted
+
+static const uint8_t BROADCAST_ADDR[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
 
 NimBLECharacteristic* buzzerChar;
 NimBLECharacteristic* statusChar;
@@ -31,6 +39,16 @@ uint8_t   winner = 0;
 uint16_t  roundNo = 0;
 bool      bleConnected = false;
 uint32_t  lastBroadcast = 0;
+uint32_t  roundStartMs = 0;
+uint32_t  buzzMs = 0;
+
+// "ER" variant = the 0.42" panel's column offset
+U8G2_SSD1306_72X40_ER_F_HW_I2C oled(U8G2_R0, U8X8_PIN_NONE, OLED_SCL, OLED_SDA);
+volatile bool oledDirty = true;
+uint32_t lastOled = 0;
+
+struct PlayerInfo { uint32_t lastSeen; uint16_t battMv; };
+PlayerInfo players[MAX_PLAYERS + 1];   // index 1..MAX_PLAYERS
 
 // Everything (ESP-NOW receive, BLE writes) goes through one queue and is
 // handled in loop(). Queue order = arrival order, so "first press wins"
@@ -61,10 +79,12 @@ void onEspNowRecv(const esp_now_recv_info_t* info, const uint8_t* data, int len)
 class ServerCB : public NimBLEServerCallbacks {
   void onConnect(NimBLEServer*, NimBLEConnInfo&) override {
     bleConnected = true;
+    oledDirty = true;
     Serial.println("[BLE] browser connected");
   }
   void onDisconnect(NimBLEServer*, NimBLEConnInfo&, int reason) override {
     bleConnected = false;
+    oledDirty = true;
     Serial.printf("[BLE] disconnected (reason %d), advertising again\n", reason);
     NimBLEDevice::startAdvertising();
   }
@@ -84,13 +104,14 @@ class WriteCB : public NimBLECharacteristicCallbacks {
 // ── Helpers ───────────────────────────────────────────────────────
 void broadcastState() {
   BuzzMsg m = {BUZZ_MAGIC, MSG_STATE, winner, (uint8_t)state, 0, roundNo};
-  esp_now_send(BROADCAST, (const uint8_t*)&m, sizeof(m));
+  esp_now_send(BROADCAST_ADDR, (const uint8_t*)&m, sizeof(m));
   lastBroadcast = millis();
 }
 
 void setState(GameState s, uint8_t w) {
   state = s;
   winner = w;
+  oledDirty = true;
 
   statusChar->setValue((uint8_t)state);
   statusChar->notify();
@@ -114,7 +135,7 @@ void setupEspNow() {
   esp_now_register_recv_cb(onEspNowRecv);
 
   esp_now_peer_info_t peer = {};
-  memcpy(peer.peer_addr, BROADCAST, 6);
+  memcpy(peer.peer_addr, BROADCAST_ADDR, 6);
   peer.channel = 0;          // 0 = current channel
   peer.ifidx = WIFI_IF_STA;
   peer.encrypt = false;
@@ -155,12 +176,69 @@ void updateLed() {
   digitalWrite(STATUS_LED, on ? LOW : HIGH);
 }
 
+// ── OLED ──────────────────────────────────────────────────────────
+// Top: browser link + round (or reaction time). Middle: READY / timer / winner.
+// Bottom: one cell per player — filled = online, blinking = low battery.
+bool playerOnline(int p) { return players[p].lastSeen && millis() - players[p].lastSeen < PLAYER_TIMEOUT_MS; }
+bool playerLowBatt(int p) { return players[p].battMv > NO_BATT_MV && players[p].battMv < LOW_BATT_MV; }
+
+void drawCentered(const char* s, int y) {
+  oled.drawStr((oled.getDisplayWidth() - oled.getStrWidth(s)) / 2, y, s);
+}
+
+void drawPlayers() {
+  oled.setFont(u8g2_font_5x7_tr);
+  bool blink = (millis() / 500) % 2;
+  for (int p = 1; p <= MAX_PLAYERS; p++) {
+    int x = (p - 1) * 18 + 2;
+    char d[2] = {char('0' + p), 0};
+    if (playerOnline(p)) {
+      if (playerLowBatt(p) && blink) oled.drawFrame(x, 31, 14, 9);
+      else { oled.drawBox(x, 31, 14, 9); oled.setDrawColor(0); }
+    }
+    oled.drawStr(x + 5, 39, d);
+    oled.setDrawColor(1);
+  }
+}
+
+void updateOled() {
+  // Redraw on change, plus periodically for the timer, blink and online status.
+  // A full redraw takes ~10 ms of I2C; events keep queueing meanwhile, so it
+  // can't change who wins.
+  uint32_t interval = state == STATE_ACTIVE ? 100 : 500;
+  if (!oledDirty && millis() - lastOled < interval) return;
+  oledDirty = false;
+  lastOled = millis();
+
+  char buf[12];
+  oled.clearBuffer();
+  oled.setFont(u8g2_font_5x7_tr);
+  oled.drawStr(0, 6, bleConnected ? "Web ok" : "No web");
+  if (state == STATE_BUZZED) snprintf(buf, sizeof(buf), "%.2fs", (buzzMs - roundStartMs) / 1000.0);
+  else if (roundNo)          snprintf(buf, sizeof(buf), "R%u", roundNo);
+  else                       buf[0] = 0;
+  oled.drawStr(oled.getDisplayWidth() - oled.getStrWidth(buf), 6, buf);
+
+  oled.setFont(u8g2_font_logisoso16_tr);
+  switch (state) {
+    case STATE_IDLE:   drawCentered("READY", 27); break;
+    case STATE_ACTIVE: snprintf(buf, sizeof(buf), "%.1f", (millis() - roundStartMs) / 1000.0); drawCentered(buf, 27); break;
+    case STATE_BUZZED: snprintf(buf, sizeof(buf), "P%u", winner); drawCentered(buf, 27); break;
+  }
+
+  drawPlayers();
+  oled.sendBuffer();
+}
+
 // ── Setup / loop ─────────────────────────────────────────────────
 void setup() {
   Serial.begin(115200);
   delay(500);
   pinMode(STATUS_LED, OUTPUT);
   events = xQueueCreate(32, sizeof(Event));
+
+  oled.begin();
+  oled.setBusClock(400000);
 
   setupEspNow();
   setupBle();
@@ -173,6 +251,7 @@ void loop() {
     switch (ev.type) {
       case EV_START:
         roundNo++;
+        roundStartMs = millis();
         setState(STATE_ACTIVE, 0);
         Serial.printf("[HUB] round %u started\n", roundNo);
         break;
@@ -183,15 +262,22 @@ void loop() {
         break;
 
       case EV_PRESS:
+        if (ev.player >= 1 && ev.player <= MAX_PLAYERS) players[ev.player].lastSeen = millis();
         // Only the first press of the current round counts. Late presses,
         // retries and presses tagged with an old round are ignored.
         if (state == STATE_ACTIVE && ev.round == roundNo) {
+          buzzMs = millis();
           setState(STATE_BUZZED, ev.player);
           Serial.printf("[HUB] >>> player %u buzzed first (rssi %d)\n", ev.player, ev.rssi);
         }
         break;
 
       case EV_HELLO:
+        if (ev.player >= 1 && ev.player <= MAX_PLAYERS) {
+          if (!playerOnline(ev.player)) oledDirty = true;
+          players[ev.player].lastSeen = millis();
+          players[ev.player].battMv = ev.battMv;
+        }
         Serial.printf("[HUB] player %u alive, battery %.2f V, rssi %d dBm\n",
                       ev.player, ev.battMv / 1000.0, ev.rssi);
         break;
@@ -207,5 +293,6 @@ void loop() {
 
   if (millis() - lastBroadcast > STATE_BROADCAST_MS) broadcastState();
   updateLed();
+  updateOled();
   delay(1);
 }
