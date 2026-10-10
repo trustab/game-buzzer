@@ -20,10 +20,6 @@
     from { transform: scale(0.92); opacity: 0; }
     to   { transform: scale(1);    opacity: 1; }
   }
-  @keyframes scanline {
-    from { transform: translateY(-100%); }
-    to   { transform: translateY(100vh); }
-  }
   @keyframes fadeSlideUp {
     from { opacity: 0; transform: translateY(8px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -114,18 +110,6 @@ function useBLE() {
   }, []);
 
   return { connected, deviceName, status, buzzedPlayer, connect, disconnect, sendReset, sendStart };
-}
-
-function Scanline() {
-  return (
-    <div style={{ position:"fixed", inset:0, pointerEvents:"none", zIndex:999, overflow:"hidden", opacity:0.025 }}>
-      <div style={{
-        position:"absolute", left:0, right:0, height:"40%",
-        background:"linear-gradient(to bottom, transparent, #fff, transparent)",
-        animation:"scanline 7s linear infinite",
-      }}/>
-    </div>
-  );
 }
 
 function ConnBar({ connected, deviceName, onConnect, onDisconnect }) {
@@ -337,7 +321,6 @@ function App() {
 
   return (
     <>
-      <Scanline/>
       <div style={{
         minHeight:"100vh", display:"flex", flexDirection:"column",
         alignItems:"center", padding:"2rem 1rem 4rem",
