@@ -1,0 +1,342 @@
+<svg viewBox="0 0 860 540" xmlns="http://www.w3.org/2000/svg" font-family="monospace" font-size="11" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo1YTU2ZTk1OC05MzEyLTQ3MmYtYTFlZC00N2ViZGMyY2IyYmUAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaM6e/tk1lC+32u3ABM9YwtEAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDoyMzg0YWU4My0zYjZjLTQ5OTItYjYzOS0xYzkzMTZkMTk1YTdscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNojSd84jKzsZjCBveNGorRawAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggTb6o13EIaKuRcfN8jR+ae0DGrqa8ysxiAtOaX8oWjYukZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaFrh2mtGuGhzzB9ITOB6r7QAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCBX40bJB5F1Y26W6xtT/AbhR+ujoYOtdsaWAR0HsPJJe2RuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBikZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjVhNTZlOTU4LTkzMTItNDcyZi1hMWVkLTQ3ZWJkYzJjYjJiZS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjcxZjhhZDMxLWMwOWItNDg3Yy1iNmE1LWJiNGQyZmJkNDU5NXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCBNvqjXcQhoq5Fx83yNH5p7QMauprzKzGIC05pfyhaNi6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggZYWC7ABlA2afBrKkTTWIxP22bDJ4dN6aa07+yM2PGwKiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgg5NHhStyctNudXoZDU7muyBVX0IOFbt/Qe75hTpcM4jV0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQBvNm1d6lC/QVIsdBnIT7KAdgBDj+x2P4JKmM9fcj84Iie/PIp1Li/Rv4wygxZssBOtgGA5kZCDOKoIUYWx8SAA=</c2pa:manifest></metadata>
+
+  <rect width="860" height="540" fill="#0a0a0f"/>
+
+  <!-- Title -->
+  <text x="430" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#f0e040" letter-spacing="3">QUIZ BUZZER — CENTRALISED WIRING</text>
+  <text x="430" y="44" text-anchor="middle" font-size="9" fill="#555570">Arduino UNO R4 WiFi · 4 × JST XH 3-pin · Direct digital I/O · Resistors inside main unit</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- MAIN UNIT BOX -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="40" y="60" width="340" height="420" rx="10" fill="#111118" stroke="#2a2a4a" stroke-width="2"/>
+  <rect x="40" y="60" width="340" height="24" rx="10" fill="#1e1e3a"/>
+  <text x="210" y="77" text-anchor="middle" font-size="11" font-weight="bold" fill="#8888cc" letter-spacing="2">MAIN UNIT</text>
+
+  <!-- Arduino sub-box -->
+  <rect x="60" y="95" width="160" height="200" rx="6" fill="#1a2a1a" stroke="#2a5a2a" stroke-width="1.5"/>
+  <text x="140" y="113" text-anchor="middle" font-size="10" font-weight="bold" fill="#4daa4d">Arduino UNO R4</text>
+  <text x="140" y="126" text-anchor="middle" font-size="8" fill="#4daa4d">WiFi</text>
+
+  <!-- Arduino pins (right side of arduino box) -->
+  <!-- D2 -->
+  <circle cx="220" cy="150" r="3.5" fill="#ff4d6d"/>
+  <text x="212" y="154" text-anchor="end" font-size="8" fill="#ff4d6d">D2</text>
+  <!-- D3 -->
+  <circle cx="220" cy="168" r="3.5" fill="#ff8888"/>
+  <text x="212" y="172" text-anchor="end" font-size="8" fill="#ff8888">D3~</text>
+  <!-- D4 -->
+  <circle cx="220" cy="186" r="3.5" fill="#4daaff"/>
+  <text x="212" y="190" text-anchor="end" font-size="8" fill="#4daaff">D4</text>
+  <!-- D5 -->
+  <circle cx="220" cy="204" r="3.5" fill="#88ccff"/>
+  <text x="212" y="208" text-anchor="end" font-size="8" fill="#88ccff">D5~</text>
+  <!-- D6 -->
+  <circle cx="220" cy="222" r="3.5" fill="#4dff9e"/>
+  <text x="212" y="226" text-anchor="end" font-size="8" fill="#4dff9e">D6</text>
+  <!-- D7 -->
+  <circle cx="220" cy="240" r="3.5" fill="#aaffcc"/>
+  <text x="212" y="244" text-anchor="end" font-size="8" fill="#aaffcc">D7~</text>
+  <!-- D8 -->
+  <circle cx="220" cy="258" r="3.5" fill="#ff9f4d"/>
+  <text x="212" y="262" text-anchor="end" font-size="8" fill="#ff9f4d">D8</text>
+  <!-- D9 -->
+  <circle cx="220" cy="276" r="3.5" fill="#ffcc88"/>
+  <text x="212" y="280" text-anchor="end" font-size="8" fill="#ffcc88">D9~</text>
+  <!-- GND -->
+  <circle cx="220" cy="294" r="3.5" fill="#44ff44"/>
+  <text x="212" y="298" text-anchor="end" font-size="8" fill="#44ff44">GND</text>
+
+  <!-- ── Resistors inside main unit ── -->
+  <!-- Label -->
+  <text x="310" y="95" text-anchor="middle" font-size="8" fill="#666688">220Ω LED</text>
+  <text x="310" y="106" text-anchor="middle" font-size="8" fill="#666688">resistors</text>
+
+  <!-- R1 (P1 LED, D3) -->
+  <rect x="268" y="162" width="36" height="12" rx="2" fill="#1a1a2a" stroke="#ff8888" stroke-width="1.5"/>
+  <text x="286" y="172" text-anchor="middle" font-size="7" fill="#ff8888">220Ω</text>
+  <!-- R2 (P2 LED, D5) -->
+  <rect x="268" y="198" width="36" height="12" rx="2" fill="#1a1a2a" stroke="#88ccff" stroke-width="1.5"/>
+  <text x="286" y="208" text-anchor="middle" font-size="7" fill="#88ccff">220Ω</text>
+  <!-- R3 (P3 LED, D7) -->
+  <rect x="268" y="234" width="36" height="12" rx="2" fill="#1a1a2a" stroke="#aaffcc" stroke-width="1.5"/>
+  <text x="286" y="244" text-anchor="middle" font-size="7" fill="#aaffcc">220Ω</text>
+  <!-- R4 (P4 LED, D9) -->
+  <rect x="268" y="270" width="36" height="12" rx="2" fill="#1a1a2a" stroke="#ffcc88" stroke-width="1.5"/>
+  <text x="286" y="280" text-anchor="middle" font-size="7" fill="#ffcc88">220Ω</text>
+
+  <!-- Wires: Arduino → resistors -->
+  <line x1="220" y1="168" x2="268" y2="168" stroke="#ff8888" stroke-width="1.5"/>
+  <line x1="220" y1="204" x2="268" y2="204" stroke="#88ccff" stroke-width="1.5"/>
+  <line x1="220" y1="240" x2="268" y2="240" stroke="#aaffcc" stroke-width="1.5"/>
+  <line x1="220" y1="276" x2="268" y2="276" stroke="#ffcc88" stroke-width="1.5"/>
+
+  <!-- GND bus rail inside unit -->
+  <line x1="220" y1="294" x2="350" y2="294" stroke="#44ff44" stroke-width="1.5"/>
+  <line x1="350" y1="150" x2="350" y2="294" stroke="#44ff44" stroke-width="1.5"/>
+  <!-- GND tap points -->
+  <circle cx="350" cy="157" r="3" fill="#44ff44"/>
+  <circle cx="350" cy="193" r="3" fill="#44ff44"/>
+  <circle cx="350" cy="229" r="3" fill="#44ff44"/>
+  <circle cx="350" cy="265" r="3" fill="#44ff44"/>
+
+  <!-- ── JST XH 3-pin sockets on right wall of main unit ── -->
+  <!-- Socket 1 — Player 1 -->
+  <rect x="362" y="138" width="16" height="42" rx="3" fill="#1a1a2a" stroke="#ff4d6d" stroke-width="1.5"/>
+  <text x="355" y="132" text-anchor="middle" font-size="7" fill="#ff4d6d">P1</text>
+  <circle cx="370" cy="150" r="3.5" fill="#0a0a0f" stroke="#ff4d6d" stroke-width="1.5"/>
+  <circle cx="370" cy="163" r="3.5" fill="#0a0a0f" stroke="#ff8888" stroke-width="1.5"/>
+  <circle cx="370" cy="176" r="3.5" fill="#0a0a0f" stroke="#44ff44" stroke-width="1.5"/>
+
+  <!-- Socket 2 — Player 2 -->
+  <rect x="362" y="174" width="16" height="42" rx="3" fill="#1a1a2a" stroke="#4daaff" stroke-width="1.5"/>
+  <text x="355" y="169" text-anchor="middle" font-size="7" fill="#4daaff">P2</text>
+  <circle cx="370" cy="186" r="3.5" fill="#0a0a0f" stroke="#4daaff" stroke-width="1.5"/>
+  <circle cx="370" cy="199" r="3.5" fill="#0a0a0f" stroke="#88ccff" stroke-width="1.5"/>
+  <circle cx="370" cy="212" r="3.5" fill="#0a0a0f" stroke="#44ff44" stroke-width="1.5"/>
+
+  <!-- Socket 3 — Player 3 -->
+  <rect x="362" y="210" width="16" height="42" rx="3" fill="#1a1a2a" stroke="#4dff9e" stroke-width="1.5"/>
+  <text x="355" y="205" text-anchor="middle" font-size="7" fill="#4dff9e">P3</text>
+  <circle cx="370" cy="222" r="3.5" fill="#0a0a0f" stroke="#4dff9e" stroke-width="1.5"/>
+  <circle cx="370" cy="235" r="3.5" fill="#0a0a0f" stroke="#aaffcc" stroke-width="1.5"/>
+  <circle cx="370" cy="248" r="3.5" fill="#0a0a0f" stroke="#44ff44" stroke-width="1.5"/>
+
+  <!-- Socket 4 — Player 4 -->
+  <rect x="362" y="246" width="16" height="42" rx="3" fill="#1a1a2a" stroke="#ff9f4d" stroke-width="1.5"/>
+  <text x="355" y="241" text-anchor="middle" font-size="7" fill="#ff9f4d">P4</text>
+  <circle cx="370" cy="258" r="3.5" fill="#0a0a0f" stroke="#ff9f4d" stroke-width="1.5"/>
+  <circle cx="370" cy="271" r="3.5" fill="#0a0a0f" stroke="#ffcc88" stroke-width="1.5"/>
+  <circle cx="370" cy="284" r="3.5" fill="#0a0a0f" stroke="#44ff44" stroke-width="1.5"/>
+
+  <!-- Wires: Arduino signal pins → socket signal pins -->
+  <line x1="220" y1="150" x2="370" y2="150" stroke="#ff4d6d" stroke-width="1.5"/>
+  <line x1="220" y1="186" x2="370" y2="186" stroke="#4daaff" stroke-width="1.5"/>
+  <line x1="220" y1="222" x2="370" y2="222" stroke="#4dff9e" stroke-width="1.5"/>
+  <line x1="220" y1="258" x2="370" y2="258" stroke="#ff9f4d" stroke-width="1.5"/>
+
+  <!-- Wires: resistor output → socket LED pins -->
+  <line x1="304" y1="168" x2="370" y2="163" stroke="#ff8888" stroke-width="1.5"/>
+  <line x1="304" y1="204" x2="370" y2="199" stroke="#88ccff" stroke-width="1.5"/>
+  <line x1="304" y1="240" x2="370" y2="235" stroke="#aaffcc" stroke-width="1.5"/>
+  <line x1="304" y1="276" x2="370" y2="271" stroke="#ffcc88" stroke-width="1.5"/>
+
+  <!-- Wires: GND bus → socket GND pins -->
+  <line x1="350" y1="157" x2="370" y2="176" stroke="#44ff44" stroke-width="1.5"/>
+  <line x1="350" y1="193" x2="370" y2="212" stroke="#44ff44" stroke-width="1.5"/>
+  <line x1="350" y1="229" x2="370" y2="248" stroke="#44ff44" stroke-width="1.5"/>
+  <line x1="350" y1="265" x2="370" y2="284" stroke="#44ff44" stroke-width="1.5"/>
+
+  <!-- USB label on arduino -->
+  <rect x="65" y="268" width="60" height="18" rx="3" fill="#0e1e0e" stroke="#2a4a2a" stroke-width="1"/>
+  <text x="95" y="281" text-anchor="middle" font-size="8" fill="#4daa4d">USB-C power</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- CABLES -->
+  <!-- ═══════════════════════════════════════════════════ -->
+
+  <!-- Cable 1 - Player 1 -->
+  <line x1="378" y1="150" x2="490" y2="150" stroke="#ff4d6d" stroke-width="2"/>
+  <line x1="378" y1="163" x2="490" y2="163" stroke="#ff8888" stroke-width="2"/>
+  <line x1="378" y1="176" x2="490" y2="176" stroke="#44ff44" stroke-width="2"/>
+
+  <!-- Cable 2 - Player 2 -->
+  <line x1="378" y1="186" x2="490" y2="270" stroke="#4daaff" stroke-width="2"/>
+  <line x1="378" y1="199" x2="490" y2="283" stroke="#88ccff" stroke-width="2"/>
+  <line x1="378" y1="212" x2="490" y2="296" stroke="#44ff44" stroke-width="2"/>
+
+  <!-- Cable 3 - Player 3 -->
+  <line x1="378" y1="222" x2="490" y2="390" stroke="#4dff9e" stroke-width="2"/>
+  <line x1="378" y1="235" x2="490" y2="403" stroke="#aaffcc" stroke-width="2"/>
+  <line x1="378" y1="248" x2="490" y2="416" stroke="#44ff44" stroke-width="2"/>
+
+  <!-- Cable 4 - Player 4 -->
+  <line x1="378" y1="258" x2="490" y2="390" stroke="#ff9f4d" stroke-width="2"/>
+  <!-- slight offset so lines don't overlap p3 -->
+  <line x1="378" y1="271" x2="492" y2="405" stroke="#ffcc88" stroke-width="2"/>
+  <line x1="378" y1="284" x2="492" y2="418" stroke="#44ff44" stroke-width="2"/>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- BUTTON MODULES -->
+  <!-- ═══════════════════════════════════════════════════ -->
+
+  <!-- ── Button 1 ── -->
+  <g id="btn1">
+    <rect x="490" y="90" width="160" height="120" rx="8" fill="#13131a" stroke="#ff4d6d" stroke-width="2"/>
+    <text x="570" y="108" text-anchor="middle" font-size="11" font-weight="bold" fill="#ff4d6d">BUTTON 1</text>
+
+    <!-- JST socket -->
+    <rect x="488" y="138" width="14" height="44" rx="3" fill="#1a1a2a" stroke="#ff4d6d" stroke-width="1.5"/>
+    <circle cx="495" cy="150" r="3.5" fill="#0a0a0f" stroke="#ff4d6d" stroke-width="1.5"/>
+    <circle cx="495" cy="163" r="3.5" fill="#0a0a0f" stroke="#ff8888" stroke-width="1.5"/>
+    <circle cx="495" cy="176" r="3.5" fill="#0a0a0f" stroke="#44ff44" stroke-width="1.5"/>
+    <text x="488" y="133" text-anchor="middle" font-size="7" fill="#666">JST IN</text>
+
+    <!-- internal wires to button/LED -->
+    <line x1="502" y1="150" x2="530" y2="150" stroke="#ff4d6d" stroke-width="1.5"/>
+    <line x1="502" y1="163" x2="530" y2="163" stroke="#ff8888" stroke-width="1.5"/>
+    <line x1="502" y1="176" x2="530" y2="176" stroke="#44ff44" stroke-width="1.5"/>
+
+    <!-- Button + LED symbol -->
+    <circle cx="580" cy="155" r="32" fill="#1a0a0a" stroke="#ff4d6d" stroke-width="2"/>
+    <!-- LED symbol inside -->
+    <circle cx="580" cy="148" r="8" fill="none" stroke="#ff4d6d" stroke-width="1.5"/>
+    <line x1="580" y1="140" x2="580" y2="156" stroke="#ff4d6d" stroke-width="1"/>
+    <line x1="572" y1="148" x2="588" y2="148" stroke="#ff4d6d" stroke-width="1"/>
+    <!-- switch symbol -->
+    <line x1="566" y1="166" x2="574" y2="166" stroke="#ff4d6d" stroke-width="1.5"/>
+    <line x1="576" y1="162" x2="584" y2="166" stroke="#ff4d6d" stroke-width="1.5"/>
+    <line x1="584" y1="166" x2="594" y2="166" stroke="#ff4d6d" stroke-width="1.5"/>
+
+    <!-- connect wires to button internals -->
+    <!-- SIG → switch NO -->
+    <line x1="530" y1="150" x2="566" y2="166" stroke="#ff4d6d" stroke-width="1.5"/>
+    <!-- LED+ → LED anode -->
+    <line x1="530" y1="163" x2="572" y2="148" stroke="#ff8888" stroke-width="1.5"/>
+    <!-- GND → switch COM + LED cathode -->
+    <line x1="530" y1="176" x2="548" y2="176" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="548" y1="166" x2="548" y2="176" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="548" y1="166" x2="566" y2="166" stroke="#44ff44" stroke-width="1.5"/>
+  </g>
+
+  <!-- ── Button 2 ── -->
+  <g id="btn2">
+    <rect x="490" y="250" width="160" height="110" rx="8" fill="#13131a" stroke="#4daaff" stroke-width="2"/>
+    <text x="570" y="268" text-anchor="middle" font-size="11" font-weight="bold" fill="#4daaff">BUTTON 2</text>
+
+    <rect x="488" y="270" width="14" height="44" rx="3" fill="#1a1a2a" stroke="#4daaff" stroke-width="1.5"/>
+    <circle cx="495" cy="282" r="3.5" fill="#0a0a0f" stroke="#4daaff" stroke-width="1.5"/>
+    <circle cx="495" cy="295" r="3.5" fill="#0a0a0f" stroke="#88ccff" stroke-width="1.5"/>
+    <circle cx="495" cy="308" r="3.5" fill="#0a0a0f" stroke="#44ff44" stroke-width="1.5"/>
+    <text x="488" y="266" text-anchor="middle" font-size="7" fill="#666">JST IN</text>
+
+    <line x1="502" y1="282" x2="530" y2="282" stroke="#4daaff" stroke-width="1.5"/>
+    <line x1="502" y1="295" x2="530" y2="295" stroke="#88ccff" stroke-width="1.5"/>
+    <line x1="502" y1="308" x2="530" y2="308" stroke="#44ff44" stroke-width="1.5"/>
+
+    <circle cx="580" cy="295" r="32" fill="#0a0a1a" stroke="#4daaff" stroke-width="2"/>
+    <circle cx="580" cy="288" r="8" fill="none" stroke="#4daaff" stroke-width="1.5"/>
+    <line x1="580" y1="280" x2="580" y2="296" stroke="#4daaff" stroke-width="1"/>
+    <line x1="572" y1="288" x2="588" y2="288" stroke="#4daaff" stroke-width="1"/>
+    <line x1="566" y1="306" x2="574" y2="306" stroke="#4daaff" stroke-width="1.5"/>
+    <line x1="576" y1="302" x2="584" y2="306" stroke="#4daaff" stroke-width="1.5"/>
+    <line x1="584" y1="306" x2="594" y2="306" stroke="#4daaff" stroke-width="1.5"/>
+
+    <line x1="530" y1="282" x2="566" y2="306" stroke="#4daaff" stroke-width="1.5"/>
+    <line x1="530" y1="295" x2="572" y2="288" stroke="#88ccff" stroke-width="1.5"/>
+    <line x1="530" y1="308" x2="548" y2="308" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="548" y1="306" x2="548" y2="308" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="548" y1="306" x2="566" y2="306" stroke="#44ff44" stroke-width="1.5"/>
+  </g>
+
+  <!-- ── Button 3 ── -->
+  <g id="btn3">
+    <rect x="490" y="370" width="160" height="110" rx="8" fill="#13131a" stroke="#4dff9e" stroke-width="2"/>
+    <text x="570" y="388" text-anchor="middle" font-size="11" font-weight="bold" fill="#4dff9e">BUTTON 3</text>
+
+    <rect x="488" y="390" width="14" height="44" rx="3" fill="#1a1a2a" stroke="#4dff9e" stroke-width="1.5"/>
+    <circle cx="495" cy="402" r="3.5" fill="#0a0a0f" stroke="#4dff9e" stroke-width="1.5"/>
+    <circle cx="495" cy="415" r="3.5" fill="#0a0a0f" stroke="#aaffcc" stroke-width="1.5"/>
+    <circle cx="495" cy="428" r="3.5" fill="#0a0a0f" stroke="#44ff44" stroke-width="1.5"/>
+    <text x="488" y="386" text-anchor="middle" font-size="7" fill="#666">JST IN</text>
+
+    <line x1="502" y1="402" x2="530" y2="402" stroke="#4dff9e" stroke-width="1.5"/>
+    <line x1="502" y1="415" x2="530" y2="415" stroke="#aaffcc" stroke-width="1.5"/>
+    <line x1="502" y1="428" x2="530" y2="428" stroke="#44ff44" stroke-width="1.5"/>
+
+    <circle cx="580" cy="415" r="32" fill="#0a1a0a" stroke="#4dff9e" stroke-width="2"/>
+    <circle cx="580" cy="408" r="8" fill="none" stroke="#4dff9e" stroke-width="1.5"/>
+    <line x1="580" y1="400" x2="580" y2="416" stroke="#4dff9e" stroke-width="1"/>
+    <line x1="572" y1="408" x2="588" y2="408" stroke="#4dff9e" stroke-width="1"/>
+    <line x1="566" y1="426" x2="574" y2="426" stroke="#4dff9e" stroke-width="1.5"/>
+    <line x1="576" y1="422" x2="584" y2="426" stroke="#4dff9e" stroke-width="1.5"/>
+    <line x1="584" y1="426" x2="594" y2="426" stroke="#4dff9e" stroke-width="1.5"/>
+
+    <line x1="530" y1="402" x2="566" y2="426" stroke="#4dff9e" stroke-width="1.5"/>
+    <line x1="530" y1="415" x2="572" y2="408" stroke="#aaffcc" stroke-width="1.5"/>
+    <line x1="530" y1="428" x2="548" y2="428" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="548" y1="426" x2="548" y2="428" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="548" y1="426" x2="566" y2="426" stroke="#44ff44" stroke-width="1.5"/>
+  </g>
+
+  <!-- ── Button 4 ── -->
+  <g id="btn4">
+    <rect x="680" y="370" width="160" height="110" rx="8" fill="#13131a" stroke="#ff9f4d" stroke-width="2"/>
+    <text x="760" y="388" text-anchor="middle" font-size="11" font-weight="bold" fill="#ff9f4d">BUTTON 4</text>
+
+    <rect x="678" y="390" width="14" height="44" rx="3" fill="#1a1a2a" stroke="#ff9f4d" stroke-width="1.5"/>
+    <circle cx="685" cy="402" r="3.5" fill="#0a0a0f" stroke="#ff9f4d" stroke-width="1.5"/>
+    <circle cx="685" cy="415" r="3.5" fill="#0a0a0f" stroke="#ffcc88" stroke-width="1.5"/>
+    <circle cx="685" cy="428" r="3.5" fill="#0a0a0f" stroke="#44ff44" stroke-width="1.5"/>
+    <text x="678" y="386" text-anchor="middle" font-size="7" fill="#666">JST IN</text>
+
+    <!-- Cable from main unit to button 4 — route along bottom -->
+    <line x1="378" y1="258" x2="650" y2="258" stroke="#ff9f4d" stroke-width="2"/>
+    <line x1="650" y1="258" x2="685" y2="402" stroke="#ff9f4d" stroke-width="2"/>
+    <line x1="378" y1="271" x2="652" y2="271" stroke="#ffcc88" stroke-width="2"/>
+    <line x1="652" y1="271" x2="685" y2="415" stroke="#ffcc88" stroke-width="2"/>
+    <line x1="378" y1="284" x2="654" y2="284" stroke="#44ff44" stroke-width="2"/>
+    <line x1="654" y1="284" x2="685" y2="428" stroke="#44ff44" stroke-width="2"/>
+
+    <line x1="692" y1="402" x2="720" y2="402" stroke="#ff9f4d" stroke-width="1.5"/>
+    <line x1="692" y1="415" x2="720" y2="415" stroke="#ffcc88" stroke-width="1.5"/>
+    <line x1="692" y1="428" x2="720" y2="428" stroke="#44ff44" stroke-width="1.5"/>
+
+    <circle cx="770" cy="415" r="32" fill="#1a120a" stroke="#ff9f4d" stroke-width="2"/>
+    <circle cx="770" cy="408" r="8" fill="none" stroke="#ff9f4d" stroke-width="1.5"/>
+    <line x1="770" y1="400" x2="770" y2="416" stroke="#ff9f4d" stroke-width="1"/>
+    <line x1="762" y1="408" x2="778" y2="408" stroke="#ff9f4d" stroke-width="1"/>
+    <line x1="756" y1="426" x2="764" y2="426" stroke="#ff9f4d" stroke-width="1.5"/>
+    <line x1="766" y1="422" x2="774" y2="426" stroke="#ff9f4d" stroke-width="1.5"/>
+    <line x1="774" y1="426" x2="784" y2="426" stroke="#ff9f4d" stroke-width="1.5"/>
+
+    <line x1="720" y1="402" x2="756" y2="426" stroke="#ff9f4d" stroke-width="1.5"/>
+    <line x1="720" y1="415" x2="762" y2="408" stroke="#ffcc88" stroke-width="1.5"/>
+    <line x1="720" y1="428" x2="738" y2="428" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="738" y1="426" x2="738" y2="428" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="738" y1="426" x2="756" y2="426" stroke="#44ff44" stroke-width="1.5"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- LEGEND -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="60" y="310" width="300" height="155" rx="6" fill="#0e0e18" stroke="#1e1e2e" stroke-width="1"/>
+  <text x="210" y="328" text-anchor="middle" font-size="9" font-weight="bold" fill="#8888cc" letter-spacing="2">PIN MAPPING</text>
+
+  <!-- headers -->
+  <text x="75"  y="344" font-size="8" fill="#666">SIGNAL</text>
+  <text x="145" y="344" font-size="8" fill="#666">ARDUINO</text>
+  <text x="215" y="344" font-size="8" fill="#666">JST PIN</text>
+  <text x="285" y="344" font-size="8" fill="#666">FUNCTION</text>
+  <line x1="68" y1="347" x2="352" y2="347" stroke="#1e1e2e" stroke-width="1"/>
+
+  <!-- P1 row -->
+  <circle cx="80" cy="358" r="4" fill="#ff4d6d"/>
+  <text x="95"  y="362" font-size="8" fill="#ff4d6d">BTN SIG</text>
+  <text x="150" y="362" font-size="8" fill="#ccc">D2</text>
+  <text x="220" y="362" font-size="8" fill="#ccc">Pin 1</text>
+  <text x="285" y="362" font-size="8" fill="#666">Switch NO</text>
+
+  <circle cx="80" cy="373" r="4" fill="#ff8888"/>
+  <text x="95"  y="377" font-size="8" fill="#ff8888">LED+</text>
+  <text x="150" y="377" font-size="8" fill="#ccc">D3 → 220Ω</text>
+  <text x="220" y="377" font-size="8" fill="#ccc">Pin 2</text>
+  <text x="285" y="377" font-size="8" fill="#666">LED anode</text>
+
+  <circle cx="80" cy="388" r="4" fill="#44ff44"/>
+  <text x="95"  y="392" font-size="8" fill="#44ff44">GND</text>
+  <text x="150" y="392" font-size="8" fill="#ccc">GND</text>
+  <text x="220" y="392" font-size="8" fill="#ccc">Pin 3</text>
+  <text x="285" y="392" font-size="8" fill="#666">SW COM + LED−</text>
+
+  <line x1="68" y1="397" x2="352" y2="397" stroke="#1e1e2e" stroke-width="1"/>
+  <text x="210" y="410" text-anchor="middle" font-size="8" fill="#555">Same pin mapping on all 4 buttons.</text>
+  <text x="210" y="423" text-anchor="middle" font-size="8" fill="#555">Signal pins: D2/D4/D6/D8 · LED pins: D3/D5/D7/D9</text>
+  <text x="210" y="436" text-anchor="middle" font-size="8" fill="#555">INPUT_PULLUP on signal pins — no external</text>
+  <text x="210" y="449" text-anchor="middle" font-size="8" fill="#555">pull-up resistors needed.</text>
+  <text x="210" y="462" text-anchor="middle" font-size="8" fill="#44ff44">Unplugged socket = pin reads HIGH = ignored.</text>
+
+  <!-- bottom caption -->
+  <text x="430" y="530" text-anchor="middle" font-size="9" fill="#333">Button module contains only: illuminated momentary switch + JST XH 3-pin socket · All resistors housed in main unit</text>
+
+</svg>

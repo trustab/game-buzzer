@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Buzzer</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #08080d; color: #e0e0f0; font-family: 'DM Mono', monospace; min-height: 100vh; }
+  @keyframes pulse-border {
+    0%, 100% { box-shadow: 0 0 0 0 var(--glow); }
+    50%       { box-shadow: 0 0 0 12px transparent; }
+  }
+  @keyframes winner-in {
+    from { transform: scale(0.92); opacity: 0; }
+    to   { transform: scale(1);    opacity: 1; }
+  }
+  @keyframes scanline {
+    from { transform: translateY(-100%); }
+    to   { transform: translateY(100vh); }
+  }
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  input:focus { outline: none; }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #08080d; }
+  ::-webkit-scrollbar-thumb { background: #1e1e30; border-radius: 2px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef, useCallback } = React;
+
+const SERVICE_UUID      = "12345678-1234-1234-1234-123456789abc";
+const BUZZER_STATE_UUID = "12345678-1234-1234-1234-123456789ab1";
+const RESET_UUID        = "12345678-1234-1234-1234-123456789ab2";
+const ROUND_START_UUID  = "12345678-1234-1234-1234-123456789ab3";
+const STATUS_UUID       = "12345678-1234-1234-1234-123456789ab4";
+
+const PLAYERS = [
+  { id: 1, color: "#ff4d6d", glow: "rgba(255,77,109,0.3)",  bg: "#1a0a0e" },
+  { id: 2, color: "#4daaff", glow: "rgba(77,170,255,0.3)",  bg: "#0a0e1a" },
+  { id: 3, color: "#4dff9e", glow: "rgba(77,255,158,0.3)",  bg: "#0a1a10" },
+  { id: 4, color: "#ff9f4d", glow: "rgba(255,159,77,0.3)",  bg: "#1a120a" },
+];
+
+function useBLE() {
+  const [connected, setConnected]       = useState(false);
+  const [deviceName, setDeviceName]     = useState("");
+  const [status, setStatus]             = useState(0);
+  const [buzzedPlayer, setBuzzedPlayer] = useState(0);
+  const deviceRef    = useRef(null);
+  const resetCharRef = useRef(null);
+  const startCharRef = useRef(null);
+
+  const disconnect = useCallback(() => {
+    if (deviceRef.current?.gatt?.connected) deviceRef.current.gatt.disconnect();
+  }, []);
+
+  const connect = useCallback(async () => {
+    try {
+      const device = await navigator.bluetooth.requestDevice({
+        filters: [{ name: "QuizBuzzer" }],
+        optionalServices: [SERVICE_UUID],
+      });
+      deviceRef.current = device;
+      device.addEventListener("gattserverdisconnected", () => {
+        setConnected(false); setDeviceName(""); setStatus(0); setBuzzedPlayer(0);
+      });
+      const server  = await device.gatt.connect();
+      const service = await server.getPrimaryService(SERVICE_UUID);
+
+      const buzzerChar = await service.getCharacteristic(BUZZER_STATE_UUID);
+      await buzzerChar.startNotifications();
+      buzzerChar.addEventListener("characteristicvaluechanged", (e) => {
+        const p = e.target.value.getUint8(0);
+        if (p > 0) setBuzzedPlayer(p);
+      });
+
+      const statusChar = await service.getCharacteristic(STATUS_UUID);
+      await statusChar.startNotifications();
+      statusChar.addEventListener("characteristicvaluechanged", (e) => {
+        setStatus(e.target.value.getUint8(0));
+      });
+      const initStatus = await statusChar.readValue();
+      setStatus(initStatus.getUint8(0));
+
+      resetCharRef.current = await service.getCharacteristic(RESET_UUID);
+      startCharRef.current = await service.getCharacteristic(ROUND_START_UUID);
+      setDeviceName(device.name);
+      setConnected(true);
+    } catch (err) {
+      console.error(err);
+    }
+  }, []);
+
+  const sendReset = useCallback(async () => {
+    await resetCharRef.current?.writeValue(new Uint8Array([1]));
+    setStatus(0); setBuzzedPlayer(0);
+  }, []);
+
+  const sendStart = useCallback(async () => {
+    await startCharRef.current?.writeValue(new Uint8Array([1]));
+    setStatus(1); setBuzzedPlayer(0);
+  }, []);
+
+  return { connected, deviceName, status, buzzedPlayer, connect, disconnect, sendReset, sendStart };
+}
+
+function Scanline() {
+  return (
+    <div style={{ position:"fixed", inset:0, pointerEvents:"none", zIndex:999, overflow:"hidden", opacity:0.025 }}>
+      <div style={{
+        position:"absolute", left:0, right:0, height:"40%",
+        background:"linear-gradient(to bottom, transparent, #fff, transparent)",
+        animation:"scanline 7s linear infinite",
+      }}/>
+    </div>
+  );
+}
+
+function ConnBar({ connected, deviceName, onConnect, onDisconnect }) {
+  const supported = !!navigator?.bluetooth;
+  return (
+    <div style={{
+      display:"flex", alignItems:"center", gap:"0.85rem",
+      background:"#0f0f18", border:"1px solid #1e1e30",
+      borderRadius:8, padding:"0.7rem 1.1rem", marginBottom:"1.5rem",
+    }}>
+      <div style={{
+        width:9, height:9, borderRadius:"50%", flexShrink:0,
+        background: connected ? "#4dff9e" : "#222233",
+        boxShadow: connected ? "0 0 10px rgba(77,255,158,0.7)" : "none",
+        transition:"all 0.4s",
+      }}/>
+      <span style={{ flex:1, fontSize:"0.78rem", color: connected ? "#e0e0f0" : "#333355" }}>
+        {!supported
+          ? "Web Bluetooth not supported — use Chrome"
+          : connected ? `Connected: ${deviceName}` : "Not connected"}
+      </span>
+      <button
+        onClick={connected ? onDisconnect : onConnect}
+        disabled={!supported}
+        style={{
+          background: connected ? "#1a1a28" : "#f0e040",
+          color: connected ? "#888" : "#000",
+          border:"none", borderRadius:5,
+          padding:"0.35rem 0.9rem",
+          fontFamily:"'DM Mono', monospace",
+          fontSize:"0.72rem", fontWeight:600,
+          letterSpacing:"0.1em", cursor:"pointer",
+          opacity: !supported ? 0.3 : 1,
+          transition:"all 0.2s",
+        }}
+      >
+        {connected ? "Disconnect" : "Connect"}
+      </button>
+    </div>
+  );
+}
+
+function StatusDisplay({ status, buzzedPlayer, names }) {
+  const player   = buzzedPlayer > 0 ? PLAYERS[buzzedPlayer - 1] : null;
+  const isActive = status === 1;
+  const isBuzzed = status === 2 && player;
+  const label    = isBuzzed
+    ? (names[buzzedPlayer - 1] || `Player ${buzzedPlayer}`).toUpperCase()
+    : isActive ? "READY" : "IDLE";
+  const sub   = isBuzzed ? "buzzed first!" : isActive ? "buzzers are live" : "waiting to start";
+  const color = isBuzzed ? player.color : isActive ? "#f0e040" : "#222244";
+
+  return (
+    <div style={{
+      position:"relative", overflow:"hidden",
+      background: isBuzzed ? player.bg : "#0f0f18",
+      border:`1px solid ${isBuzzed ? player.color : isActive ? "#f0e04055" : "#1e1e30"}`,
+      borderRadius:12, padding:"2rem 1.5rem",
+      textAlign:"center", marginBottom:"1.5rem",
+      transition:"all 0.35s",
+      animation: isActive ? "pulse-border 1s ease-in-out infinite" : "none",
+      "--glow": isActive ? "rgba(240,224,64,0.2)" : "transparent",
+      boxShadow: isBuzzed ? `0 0 50px ${player.glow}` : "none",
+    }}>
+      {isBuzzed && (
+        <div style={{
+          position:"absolute", inset:0, pointerEvents:"none",
+          background:`radial-gradient(ellipse at center, ${player.glow} 0%, transparent 70%)`,
+        }}/>
+      )}
+      <div style={{ fontSize:"0.6rem", letterSpacing:"0.3em", color:"#333355", marginBottom:"0.6rem", textTransform:"uppercase" }}>
+        Status
+      </div>
+      <div style={{
+        fontFamily:"'Bebas Neue', sans-serif",
+        fontSize:"clamp(2.2rem, 9vw, 4rem)",
+        color, letterSpacing:"0.05em", lineHeight:1,
+        animation: isBuzzed ? "winner-in 0.3s ease-out" : "none",
+        transition:"color 0.3s",
+      }}>
+        {label}
+      </div>
+      <div style={{ fontSize:"0.7rem", color:"#333355", marginTop:"0.5rem", letterSpacing:"0.15em" }}>
+        {sub}
+      </div>
+    </div>
+  );
+}
+
+function PlayerCard({ player, name, score, isBuzzed, onNameChange, onScore }) {
+  return (
+    <div style={{
+      background: isBuzzed ? player.bg : "#0f0f18",
+      border:`2px solid ${isBuzzed ? player.color : "#1a1a28"}`,
+      borderRadius:10, padding:"0.9rem 1rem",
+      transition:"all 0.3s",
+      boxShadow: isBuzzed ? `0 0 22px ${player.glow}` : "none",
+      transform: isBuzzed ? "scale(1.03)" : "scale(1)",
+      animation: isBuzzed ? "winner-in 0.3s ease-out" : "none",
+    }}>
+      <div style={{ display:"flex", alignItems:"center", gap:"0.55rem", marginBottom:"0.65rem" }}>
+        <div style={{
+          width:8, height:8, borderRadius:"50%", flexShrink:0,
+          background: player.color,
+          boxShadow:`0 0 7px ${player.color}`,
+        }}/>
+        <input
+          value={name}
+          onChange={(e) => onNameChange(e.target.value)}
+          maxLength={14}
+          style={{
+            background:"transparent", border:"none",
+            borderBottom:`1px solid ${isBuzzed ? player.color : "#1e1e30"}`,
+            color:"#e0e0f0", fontFamily:"'DM Mono', monospace",
+            fontSize:"0.8rem", width:"100%",
+            padding:"0.1rem 0", transition:"border-color 0.2s",
+          }}
+        />
+      </div>
+      <div style={{ display:"flex", alignItems:"center", justifyContent:"space-between" }}>
+        <span style={{ fontSize:"0.6rem", letterSpacing:"0.2em", color:"#222240", textTransform:"uppercase" }}>
+          Score
+        </span>
+        <div style={{ display:"flex", alignItems:"center", gap:"0.45rem" }}>
+          {[-1, 1].map((delta) => (
+            <button key={delta} onClick={() => onScore(delta)} style={{
+              width:22, height:22, borderRadius:4,
+              border:"1px solid #1e1e30", background:"#08080d",
+              color:"#666", fontSize:"1rem", cursor:"pointer",
+              display:"flex", alignItems:"center", justifyContent:"center",
+              fontFamily:"'DM Mono', monospace",
+            }}>
+              {delta > 0 ? "+" : "−"}
+            </button>
+          ))}
+          <span style={{
+            fontFamily:"'Bebas Neue', sans-serif",
+            fontSize:"1.6rem", color: player.color,
+            minWidth:"2ch", textAlign:"center", lineHeight:1,
+          }}>
+            {score}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function LogEntry({ entry }) {
+  return (
+    <div style={{
+      fontSize:"0.7rem", lineHeight:1.9,
+      borderBottom:"1px solid #0f0f18",
+      padding:"0.1rem 0",
+      animation:"fadeSlideUp 0.2s ease-out",
+    }}>
+      <span style={{ color:"#1e1e30", marginRight:"0.75rem" }}>{entry.ts}</span>
+      <span style={{ color: entry.isBuzz ? "#f0e040" : "#444466" }}>{entry.message}</span>
+    </div>
+  );
+}
+
+function App() {
+  const { connected, deviceName, status, buzzedPlayer, connect, disconnect, sendReset, sendStart } = useBLE();
+
+  // localStorage-backed names
+  const [names, setNames] = useState(() => {
+    try { return JSON.parse(localStorage.getItem("buzzer-names")) || ["Player 1", "Player 2", "Player 3", "Player 4"]; }
+    catch { return ["Player 1", "Player 2", "Player 3", "Player 4"]; }
+  });
+
+  // localStorage-backed scores
+  const [scores, setScores] = useState(() => {
+    try { return JSON.parse(localStorage.getItem("buzzer-scores")) || [0, 0, 0, 0]; }
+    catch { return [0, 0, 0, 0]; }
+  });
+
+  const [log, setLog] = useState([{ ts:"--:--:--", message:"Waiting for connection...", isBuzz:false }]);
+
+  // Persist names whenever they change
+  useEffect(() => {
+    localStorage.setItem("buzzer-names", JSON.stringify(names));
+  }, [names]);
+
+  // Persist scores whenever they change
+  useEffect(() => {
+    localStorage.setItem("buzzer-scores", JSON.stringify(scores));
+  }, [scores]);
+
+  const addLog = useCallback((message, isBuzz = false) => {
+    const ts = new Date().toTimeString().slice(0, 8);
+    setLog((prev) => [{ ts, message, isBuzz }, ...prev].slice(0, 50));
+  }, []);
+
+  useEffect(() => { if (connected) addLog(`Connected: ${deviceName}`); }, [connected]);
+
+  useEffect(() => {
+    if (buzzedPlayer > 0) {
+      addLog(`🔔 ${names[buzzedPlayer - 1] || `Player ${buzzedPlayer}`} buzzed first!`, true);
+    }
+  }, [buzzedPlayer]);
+
+  const handleStart     = async () => { await sendStart(); addLog("Round started"); };
+  const handleReset     = async () => { await sendReset(); addLog("Buzzer reset"); };
+  const handleNewGame   = () => {
+    setScores([0, 0, 0, 0]);
+    addLog("New game — scores reset");
+  };
+
+  return (
+    <>
+      <Scanline/>
+      <div style={{
+        minHeight:"100vh", display:"flex", flexDirection:"column",
+        alignItems:"center", padding:"2rem 1rem 4rem",
+      }}>
+        <header style={{ textAlign:"center", marginBottom:"2rem" }}>
+          <h1 style={{
+            fontFamily:"'Bebas Neue', sans-serif",
+            fontSize:"clamp(3rem, 11vw, 6rem)",
+            color:"#f0e040", letterSpacing:"0.1em", lineHeight:1,
+            textShadow:"0 0 50px rgba(240,224,64,0.2)",
+          }}>
+            QUIZ BUZZER
+          </h1>
+          <p style={{ fontSize:"0.7rem", color:"#222244", letterSpacing:"0.25em", marginTop:"0.3rem" }}>
+            WEB BLUETOOTH CONTROLLER
+          </p>
+        </header>
+
+        <div style={{ width:"100%", maxWidth:480 }}>
+          <ConnBar connected={connected} deviceName={deviceName} onConnect={connect} onDisconnect={disconnect}/>
+          <StatusDisplay status={status} buzzedPlayer={buzzedPlayer} names={names}/>
+
+          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"0.75rem", marginBottom:"1.25rem" }}>
+            {PLAYERS.map((player, i) => (
+              <PlayerCard
+                key={player.id}
+                player={player}
+                name={names[i]}
+                score={scores[i]}
+                isBuzzed={buzzedPlayer === player.id}
+                onNameChange={(v) => setNames((n) => n.map((x, j) => j === i ? v : x))}
+                onScore={(delta) => setScores((s) => s.map((v, j) => j === i ? Math.max(0, v + delta) : v))}
+              />
+            ))}
+          </div>
+
+          <div style={{ display:"flex", gap:"0.75rem", marginBottom:"0.75rem" }}>
+            {[
+              { label:"▶  Start Round", action:handleStart, primary:true,  needsConn:true  },
+              { label:"↺  Reset",       action:handleReset, primary:false, needsConn:true  },
+            ].map(({ label, action, primary, needsConn }) => (
+              <button key={label} onClick={action} disabled={needsConn && !connected} style={{
+                flex:1, border:"none", borderRadius:7, padding:"0.85rem",
+                background: primary ? "#f0e040" : "#1a1a28",
+                color: primary ? "#000" : "#888",
+                fontFamily:"'DM Mono', monospace",
+                fontSize:"0.78rem", fontWeight: primary ? 700 : 500,
+                letterSpacing:"0.1em", cursor:"pointer",
+                opacity: (needsConn && !connected) ? 0.25 : 1,
+                transition:"opacity 0.2s",
+              }}>
+                {label}
+              </button>
+            ))}
+          </div>
+          <div style={{ display:"flex", marginBottom:"1.5rem" }}>
+            <button onClick={handleNewGame} style={{
+              flex:1, border:"1px solid #1e1e30", borderRadius:7, padding:"0.6rem",
+              background:"transparent", color:"#444466",
+              fontFamily:"'DM Mono', monospace",
+              fontSize:"0.72rem", letterSpacing:"0.1em", cursor:"pointer",
+              transition:"color 0.2s, border-color 0.2s",
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.color="#ff4d6d"; e.currentTarget.style.borderColor="#ff4d6d44"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.color="#444466"; e.currentTarget.style.borderColor="#1e1e30"; }}
+            >
+              ✕  New Game — Reset Scores
+            </button>
+          </div>
+
+          <div>
+            <div style={{ fontSize:"0.62rem", letterSpacing:"0.25em", color:"#1e1e30", marginBottom:"0.4rem", textTransform:"uppercase" }}>
+              Event Log
+            </div>
+            <div style={{
+              background:"#0f0f18", border:"1px solid #1a1a28",
+              borderRadius:8, padding:"0.75rem",
+              maxHeight:200, overflowY:"auto",
+            }}>
+              {log.map((entry, i) => <LogEntry key={i} entry={entry}/>)}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>

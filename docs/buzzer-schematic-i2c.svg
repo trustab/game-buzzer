@@ -1,0 +1,445 @@
+<svg viewBox="0 0 1020 700" xmlns="http://www.w3.org/2000/svg" font-family="monospace" font-size="11" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTowYzEzM2U2Yy1kNTY2LTQwYjEtOWVmYi1kYjRiYTVkOWI3YWIAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaOc7/7SuUdjb0P8CWUavKm4AAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo4ZDY5ZmYyMC03ZTVjLTQ5NGYtYjZlYi1mODYzZjY3YjEyYTdscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNo89673A+s6+EwGp+GSoAxPgAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggQHYluWy1QgVj9at8fVDzEPq0U5Vm+M8SJuyWdxY8JIGkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaHX/kPzvsSHqeUrIlQY/UacAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCCkJwu5090ivlKfGHKFwHspE0GezuoIRXD6S2mVe7NTE2RuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBilZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjBjMTMzZTZjLWQ1NjYtNDBiMS05ZWZiLWRiNGJhNWQ5YjdhYi9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjAxOTJiNjY0LTczNGYtNDBkMi1hYzlhLWM4ZWMwMmNiZjYzN3JjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCBAdiW5bLVCBWP1q3x9UPMQ+rRTlWb4zxIm7JZ3FjwkgaJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggbo5B35ePqHlsSYc3KCsHE44LovdLCW+g4Jf3+5cFdb6iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggLC0Sehx/ZF3tcG+SSi3055kOL/ataKTCm8wTi9ZbgT50Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQBSHp50dfQTR00ApE2af30ALKLftRG44hsdBh6p9304+Bn76xfbBWhFayLEt9Q164nnMErU3pmId8Wuz9mBjfWg=</c2pa:manifest></metadata>
+  <defs>
+    <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#666"/>
+    </marker>
+    <!-- I2C bus gradient -->
+    <linearGradient id="busGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f0e040;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#f0e040;stop-opacity:0.3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1020" height="700" fill="#0a0a0f"/>
+
+  <!-- Title -->
+  <text x="510" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#f0e040" letter-spacing="3">QUIZ BUZZER — MODULAR I²C SCHEMATIC</text>
+  <text x="510" y="50" text-anchor="middle" font-size="10" fill="#555570">Arduino UNO R4 WiFi · PCF8574 GPIO Expander per module · 4-wire daisy-chain bus</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- ARDUINO -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <rect x="20" y="70" width="150" height="220" rx="8" fill="#1a2a1a" stroke="#2a5a2a" stroke-width="2"/>
+  <text x="95" y="90" text-anchor="middle" font-size="11" font-weight="bold" fill="#4daa4d">Arduino UNO R4</text>
+  <text x="95" y="103" text-anchor="middle" font-size="9" fill="#4daa4d">WiFi</text>
+
+  <!-- Arduino pins -->
+  <!-- SDA -->
+  <circle cx="170" cy="130" r="4" fill="#f0e040"/>
+  <text x="158" y="134" text-anchor="end" font-size="9" fill="#aaa">A4/SDA</text>
+  <!-- SCL -->
+  <circle cx="170" cy="155" r="4" fill="#f0e040"/>
+  <text x="158" y="159" text-anchor="end" font-size="9" fill="#aaa">A5/SCL</text>
+  <!-- 5V -->
+  <circle cx="170" cy="180" r="4" fill="#ff6666"/>
+  <text x="158" y="184" text-anchor="end" font-size="9" fill="#ff6666">5V</text>
+  <!-- GND -->
+  <circle cx="170" cy="205" r="4" fill="#44ff44"/>
+  <text x="158" y="209" text-anchor="end" font-size="9" fill="#44ff44">GND</text>
+
+  <!-- BLE chip note -->
+  <rect x="30" y="235" width="130" height="40" rx="4" fill="#0e1e0e" stroke="#2a4a2a" stroke-width="1"/>
+  <text x="95" y="251" text-anchor="middle" font-size="9" fill="#4daa4d">ESP32-S3</text>
+  <text x="95" y="264" text-anchor="middle" font-size="8" fill="#555570">BLE handled internally</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- I²C BUS — 4 rails running across the page -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- SDA  rail  y=130 -->
+  <!-- SCL  rail  y=155 -->
+  <!-- 5V   rail  y=180 -->
+  <!-- GND  rail  y=205 -->
+
+  <!-- Bus lines from Arduino to end of last module -->
+  <line x1="170" y1="130" x2="930" y2="130" stroke="#f0e040" stroke-width="2"/>
+  <line x1="170" y1="155" x2="930" y2="155" stroke="#ff9f4d" stroke-width="2"/>
+  <line x1="170" y1="180" x2="930" y2="180" stroke="#ff6666" stroke-width="2"/>
+  <line x1="170" y1="205" x2="930" y2="205" stroke="#44ff44" stroke-width="2"/>
+
+  <!-- Bus labels at right end -->
+  <text x="936" y="134" fill="#f0e040" font-size="9">SDA</text>
+  <text x="936" y="159" fill="#ff9f4d" font-size="9">SCL</text>
+  <text x="936" y="184" fill="#ff6666" font-size="9">5V</text>
+  <text x="936" y="209" fill="#44ff44" font-size="9">GND</text>
+
+  <!-- Bus bracket label -->
+  <rect x="172" y="115" width="90" height="14" rx="3" fill="#1a1a10" stroke="#f0e04044" stroke-width="1"/>
+  <text x="217" y="126" text-anchor="middle" font-size="9" fill="#f0e04099">4-wire I²C bus</text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- MODULE TEMPLATE — repeated 4x -->
+  <!-- Columns at x = 220, 410, 600, 790 -->
+  <!-- ═══════════════════════════════════════════════════ -->
+
+  <!-- Helper: connector dots on bus for each module -->
+  <!-- M1 -->
+  <circle cx="270" cy="130" r="4" fill="#f0e040" stroke="#0a0a0f" stroke-width="1"/>
+  <circle cx="270" cy="155" r="4" fill="#ff9f4d" stroke="#0a0a0f" stroke-width="1"/>
+  <circle cx="270" cy="180" r="4" fill="#ff6666" stroke="#0a0a0f" stroke-width="1"/>
+  <circle cx="270" cy="205" r="4" fill="#44ff44" stroke="#0a0a0f" stroke-width="1"/>
+  <!-- M2 -->
+  <circle cx="460" cy="130" r="4" fill="#f0e040" stroke="#0a0a0f" stroke-width="1"/>
+  <circle cx="460" cy="155" r="4" fill="#ff9f4d" stroke="#0a0a0f" stroke-width="1"/>
+  <circle cx="460" cy="180" r="4" fill="#ff6666" stroke="#0a0a0f" stroke-width="1"/>
+  <circle cx="460" cy="205" r="4" fill="#44ff44" stroke="#0a0a0f" stroke-width="1"/>
+  <!-- M3 -->
+  <circle cx="650" cy="130" r="4" fill="#f0e040" stroke="#0a0a0f" stroke-width="1"/>
+  <circle cx="650" cy="155" r="4" fill="#ff9f4d" stroke="#0a0a0f" stroke-width="1"/>
+  <circle cx="650" cy="180" r="4" fill="#ff6666" stroke="#0a0a0f" stroke-width="1"/>
+  <circle cx="650" cy="205" r="4" fill="#44ff44" stroke="#0a0a0f" stroke-width="1"/>
+  <!-- M4 -->
+  <circle cx="840" cy="130" r="4" fill="#f0e040" stroke="#0a0a0f" stroke-width="1"/>
+  <circle cx="840" cy="155" r="4" fill="#ff9f4d" stroke="#0a0a0f" stroke-width="1"/>
+  <circle cx="840" cy="180" r="4" fill="#ff6666" stroke="#0a0a0f" stroke-width="1"/>
+  <circle cx="840" cy="205" r="4" fill="#44ff44" stroke="#0a0a0f" stroke-width="1"/>
+
+  <!-- ═══════════════════ MODULE 1 ═══════════════════ -->
+  <g id="mod1">
+    <!-- Module box -->
+    <rect x="220" y="250" width="140" height="340" rx="8" fill="#13131a" stroke="#ff4d6d" stroke-width="2"/>
+    <rect x="220" y="250" width="140" height="22" rx="8" fill="#ff4d6d22"/>
+    <text x="290" y="265" text-anchor="middle" font-size="11" font-weight="bold" fill="#ff4d6d">MODULE 1</text>
+    <text x="290" y="278" text-anchor="middle" font-size="8" fill="#ff4d6d99">PLAYER 1 · 0x20</text>
+
+    <!-- PCF8574 chip -->
+    <rect x="240" y="295" width="100" height="80" rx="4" fill="#1a1020" stroke="#aa44aa" stroke-width="1.5"/>
+    <text x="290" y="313" text-anchor="middle" font-size="10" font-weight="bold" fill="#cc88cc">PCF8574</text>
+    <!-- chip pins left -->
+    <text x="248" y="330" font-size="8" fill="#aaa">SDA</text>
+    <text x="248" y="345" font-size="8" fill="#aaa">SCL</text>
+    <text x="248" y="360" font-size="8" fill="#aaa">VCC</text>
+    <text x="248" y="375" font-size="8" fill="#aaa">GND</text>
+    <!-- chip pins right -->
+    <text x="326" y="330" text-anchor="end" font-size="8" fill="#aaa">P0</text>
+    <text x="326" y="345" text-anchor="end" font-size="8" fill="#aaa">P1</text>
+
+    <!-- wire: bus → chip VCC/GND/SDA/SCL -->
+    <!-- SDA drop -->
+    <line x1="270" y1="130" x2="270" y2="326" stroke="#f0e040" stroke-width="1.5"/>
+    <line x1="270" y1="326" x2="240" y2="326" stroke="#f0e040" stroke-width="1.5"/>
+    <!-- SCL drop -->
+    <line x1="278" y1="155" x2="278" y2="341" stroke="#ff9f4d" stroke-width="1.5"/>
+    <line x1="278" y1="341" x2="240" y2="341" stroke="#ff9f4d" stroke-width="1.5"/>
+    <!-- 5V drop -->
+    <line x1="286" y1="180" x2="286" y2="356" stroke="#ff6666" stroke-width="1.5"/>
+    <line x1="286" y1="356" x2="240" y2="356" stroke="#ff6666" stroke-width="1.5"/>
+    <!-- GND drop -->
+    <line x1="294" y1="205" x2="294" y2="371" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="294" y1="371" x2="240" y2="371" stroke="#44ff44" stroke-width="1.5"/>
+
+    <!-- Address jumpers A0=0,A1=0,A2=0 -->
+    <rect x="235" y="390" width="110" height="28" rx="3" fill="#0e0e14" stroke="#333" stroke-width="1"/>
+    <text x="290" y="403" text-anchor="middle" font-size="8" fill="#aaa">Address: A2=0 A1=0 A0=0</text>
+    <text x="290" y="414" text-anchor="middle" font-size="8" fill="#cc88cc">→ 0x20</text>
+
+    <!-- P0 → button -->
+    <line x1="340" y1="326" x2="360" y2="326" stroke="#ff4d6d" stroke-width="1.5"/>
+    <line x1="360" y1="326" x2="360" y2="450" stroke="#ff4d6d" stroke-width="1.5"/>
+    <!-- P1 → resistor → LED -->
+    <line x1="340" y1="341" x2="358" y2="341" stroke="#ff8888" stroke-width="1.5"/>
+
+    <!-- Resistor P1 side -->
+    <rect x="344" y="456" width="32" height="14" rx="2" fill="#1a1a1a" stroke="#ff8888" stroke-width="1.5"/>
+    <text x="360" y="466" text-anchor="middle" font-size="8" fill="#ff8888">220Ω</text>
+    <line x1="358" y1="341" x2="358" y2="456" stroke="#ff8888" stroke-width="1.5"/>
+    <line x1="358" y1="470" x2="358" y2="490" stroke="#ff8888" stroke-width="1.5"/>
+
+    <!-- Button symbol -->
+    <rect x="242" y="445" width="76" height="60" rx="28" fill="#2a1010" stroke="#ff4d6d" stroke-width="2"/>
+    <!-- LED circle inside -->
+    <circle cx="280" cy="462" r="7" fill="none" stroke="#ff4d6d" stroke-width="1.5"/>
+    <line x1="280" y1="455" x2="280" y2="469" stroke="#ff4d6d" stroke-width="1"/>
+    <line x1="273" y1="462" x2="287" y2="462" stroke="#ff4d6d" stroke-width="1"/>
+    <!-- button switch line -->
+    <text x="280" y="497" text-anchor="middle" font-size="8" fill="#ff4d6d">BTN 1</text>
+
+    <!-- Wires between button and chip -->
+    <!-- button NO → P0 (right side of button to P0) -->
+    <line x1="318" y1="462" x2="360" y2="462" stroke="#ff4d6d" stroke-width="1.5"/>
+    <line x1="360" y1="462" x2="360" y2="326" stroke="#ff4d6d" stroke-width="1.5"/>
+
+    <!-- LED anode: 5V → resistor top -->
+    <line x1="286" y1="180" x2="358" y2="180" stroke="#ff6666" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="358" y1="180" x2="358" y2="456" stroke="#ff6666" stroke-width="1" stroke-dasharray="3,3"/>
+
+    <!-- LED cathode → P1 (bottom of resistor connects via P1 which sinks) -->
+    <!-- (already connected via P1 line above) -->
+
+    <!-- button COM → GND -->
+    <line x1="242" y1="475" x2="225" y2="475" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="225" y1="475" x2="225" y2="205" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="225" y1="205" x2="270" y2="205" stroke="#44ff44" stroke-width="1"/>
+
+    <!-- JST connector symbol at top of module -->
+    <rect x="252" y="232" width="76" height="16" rx="3" fill="#0a0a14" stroke="#666" stroke-width="1"/>
+    <text x="290" y="244" text-anchor="middle" font-size="8" fill="#888">4-pin JST IN</text>
+    <!-- 4 pin dots -->
+    <circle cx="263" cy="238" r="2" fill="#f0e040"/>
+    <circle cx="274" cy="238" r="2" fill="#ff9f4d"/>
+    <circle cx="285" cy="238" r="2" fill="#ff6666"/>
+    <circle cx="296" cy="238" r="2" fill="#44ff44"/>
+
+    <!-- JST OUT (daisy chain) -->
+    <rect x="252" y="580" width="76" height="16" rx="3" fill="#0a0a14" stroke="#666" stroke-width="1"/>
+    <text x="290" y="592" text-anchor="middle" font-size="8" fill="#888">4-pin JST OUT</text>
+    <circle cx="263" cy="586" r="2" fill="#f0e040"/>
+    <circle cx="274" cy="586" r="2" fill="#ff9f4d"/>
+    <circle cx="285" cy="586" r="2" fill="#ff6666"/>
+    <circle cx="296" cy="586" r="2" fill="#44ff44"/>
+  </g>
+
+  <!-- ═══════════════════ MODULE 2 ═══════════════════ -->
+  <g id="mod2">
+    <rect x="410" y="250" width="140" height="340" rx="8" fill="#13131a" stroke="#4daaff" stroke-width="2"/>
+    <rect x="410" y="250" width="140" height="22" rx="8" fill="#4daaff22"/>
+    <text x="480" y="265" text-anchor="middle" font-size="11" font-weight="bold" fill="#4daaff">MODULE 2</text>
+    <text x="480" y="278" text-anchor="middle" font-size="8" fill="#4daaff99">PLAYER 2 · 0x21</text>
+
+    <rect x="430" y="295" width="100" height="80" rx="4" fill="#1a1020" stroke="#aa44aa" stroke-width="1.5"/>
+    <text x="480" y="313" text-anchor="middle" font-size="10" font-weight="bold" fill="#cc88cc">PCF8574</text>
+    <text x="438" y="330" font-size="8" fill="#aaa">SDA</text>
+    <text x="438" y="345" font-size="8" fill="#aaa">SCL</text>
+    <text x="438" y="360" font-size="8" fill="#aaa">VCC</text>
+    <text x="438" y="375" font-size="8" fill="#aaa">GND</text>
+    <text x="516" y="330" text-anchor="end" font-size="8" fill="#aaa">P0</text>
+    <text x="516" y="345" text-anchor="end" font-size="8" fill="#aaa">P1</text>
+
+    <line x1="460" y1="130" x2="460" y2="326" stroke="#f0e040" stroke-width="1.5"/>
+    <line x1="460" y1="326" x2="430" y2="326" stroke="#f0e040" stroke-width="1.5"/>
+    <line x1="468" y1="155" x2="468" y2="341" stroke="#ff9f4d" stroke-width="1.5"/>
+    <line x1="468" y1="341" x2="430" y2="341" stroke="#ff9f4d" stroke-width="1.5"/>
+    <line x1="476" y1="180" x2="476" y2="356" stroke="#ff6666" stroke-width="1.5"/>
+    <line x1="476" y1="356" x2="430" y2="356" stroke="#ff6666" stroke-width="1.5"/>
+    <line x1="484" y1="205" x2="484" y2="371" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="484" y1="371" x2="430" y2="371" stroke="#44ff44" stroke-width="1.5"/>
+
+    <rect x="425" y="390" width="110" height="28" rx="3" fill="#0e0e14" stroke="#333" stroke-width="1"/>
+    <text x="480" y="403" text-anchor="middle" font-size="8" fill="#aaa">Address: A2=0 A1=0 A0=1</text>
+    <text x="480" y="414" text-anchor="middle" font-size="8" fill="#cc88cc">→ 0x21</text>
+
+    <line x1="530" y1="326" x2="550" y2="326" stroke="#4daaff" stroke-width="1.5"/>
+    <line x1="550" y1="326" x2="550" y2="462" stroke="#4daaff" stroke-width="1.5"/>
+    <line x1="508" y1="341" x2="548" y2="341" stroke="#88ccff" stroke-width="1.5"/>
+    <rect x="534" y="456" width="32" height="14" rx="2" fill="#1a1a1a" stroke="#88ccff" stroke-width="1.5"/>
+    <text x="550" y="466" text-anchor="middle" font-size="8" fill="#88ccff">220Ω</text>
+    <line x1="548" y1="341" x2="548" y2="456" stroke="#88ccff" stroke-width="1.5"/>
+    <line x1="548" y1="470" x2="548" y2="490" stroke="#88ccff" stroke-width="1.5"/>
+
+    <rect x="432" y="445" width="76" height="60" rx="28" fill="#10102a" stroke="#4daaff" stroke-width="2"/>
+    <circle cx="470" cy="462" r="7" fill="none" stroke="#4daaff" stroke-width="1.5"/>
+    <line x1="470" y1="455" x2="470" y2="469" stroke="#4daaff" stroke-width="1"/>
+    <line x1="463" y1="462" x2="477" y2="462" stroke="#4daaff" stroke-width="1"/>
+    <text x="470" y="497" text-anchor="middle" font-size="8" fill="#4daaff">BTN 2</text>
+
+    <line x1="508" y1="462" x2="550" y2="462" stroke="#4daaff" stroke-width="1.5"/>
+    <line x1="550" y1="462" x2="550" y2="326" stroke="#4daaff" stroke-width="1.5"/>
+    <line x1="476" y1="180" x2="548" y2="180" stroke="#ff6666" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="548" y1="180" x2="548" y2="456" stroke="#ff6666" stroke-width="1" stroke-dasharray="3,3"/>
+
+    <line x1="432" y1="475" x2="415" y2="475" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="415" y1="475" x2="415" y2="205" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="415" y1="205" x2="460" y2="205" stroke="#44ff44" stroke-width="1"/>
+
+    <rect x="442" y="232" width="76" height="16" rx="3" fill="#0a0a14" stroke="#666" stroke-width="1"/>
+    <text x="480" y="244" text-anchor="middle" font-size="8" fill="#888">4-pin JST IN</text>
+    <circle cx="453" cy="238" r="2" fill="#f0e040"/>
+    <circle cx="464" cy="238" r="2" fill="#ff9f4d"/>
+    <circle cx="475" cy="238" r="2" fill="#ff6666"/>
+    <circle cx="486" cy="238" r="2" fill="#44ff44"/>
+
+    <rect x="442" y="580" width="76" height="16" rx="3" fill="#0a0a14" stroke="#666" stroke-width="1"/>
+    <text x="480" y="592" text-anchor="middle" font-size="8" fill="#888">4-pin JST OUT</text>
+    <circle cx="453" cy="586" r="2" fill="#f0e040"/>
+    <circle cx="464" cy="586" r="2" fill="#ff9f4d"/>
+    <circle cx="475" cy="586" r="2" fill="#ff6666"/>
+    <circle cx="486" cy="586" r="2" fill="#44ff44"/>
+  </g>
+
+  <!-- ═══════════════════ MODULE 3 ═══════════════════ -->
+  <g id="mod3">
+    <rect x="600" y="250" width="140" height="340" rx="8" fill="#13131a" stroke="#4dff9e" stroke-width="2"/>
+    <rect x="600" y="250" width="140" height="22" rx="8" fill="#4dff9e22"/>
+    <text x="670" y="265" text-anchor="middle" font-size="11" font-weight="bold" fill="#4dff9e">MODULE 3</text>
+    <text x="670" y="278" text-anchor="middle" font-size="8" fill="#4dff9e99">PLAYER 3 · 0x22</text>
+
+    <rect x="620" y="295" width="100" height="80" rx="4" fill="#1a1020" stroke="#aa44aa" stroke-width="1.5"/>
+    <text x="670" y="313" text-anchor="middle" font-size="10" font-weight="bold" fill="#cc88cc">PCF8574</text>
+    <text x="628" y="330" font-size="8" fill="#aaa">SDA</text>
+    <text x="628" y="345" font-size="8" fill="#aaa">SCL</text>
+    <text x="628" y="360" font-size="8" fill="#aaa">VCC</text>
+    <text x="628" y="375" font-size="8" fill="#aaa">GND</text>
+    <text x="706" y="330" text-anchor="end" font-size="8" fill="#aaa">P0</text>
+    <text x="706" y="345" text-anchor="end" font-size="8" fill="#aaa">P1</text>
+
+    <line x1="650" y1="130" x2="650" y2="326" stroke="#f0e040" stroke-width="1.5"/>
+    <line x1="650" y1="326" x2="620" y2="326" stroke="#f0e040" stroke-width="1.5"/>
+    <line x1="658" y1="155" x2="658" y2="341" stroke="#ff9f4d" stroke-width="1.5"/>
+    <line x1="658" y1="341" x2="620" y2="341" stroke="#ff9f4d" stroke-width="1.5"/>
+    <line x1="666" y1="180" x2="666" y2="356" stroke="#ff6666" stroke-width="1.5"/>
+    <line x1="666" y1="356" x2="620" y2="356" stroke="#ff6666" stroke-width="1.5"/>
+    <line x1="674" y1="205" x2="674" y2="371" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="674" y1="371" x2="620" y2="371" stroke="#44ff44" stroke-width="1.5"/>
+
+    <rect x="615" y="390" width="110" height="28" rx="3" fill="#0e0e14" stroke="#333" stroke-width="1"/>
+    <text x="670" y="403" text-anchor="middle" font-size="8" fill="#aaa">Address: A2=0 A1=1 A0=0</text>
+    <text x="670" y="414" text-anchor="middle" font-size="8" fill="#cc88cc">→ 0x22</text>
+
+    <line x1="720" y1="326" x2="740" y2="326" stroke="#4dff9e" stroke-width="1.5"/>
+    <line x1="740" y1="326" x2="740" y2="462" stroke="#4dff9e" stroke-width="1.5"/>
+    <line x1="698" y1="341" x2="738" y2="341" stroke="#aaffcc" stroke-width="1.5"/>
+    <rect x="724" y="456" width="32" height="14" rx="2" fill="#1a1a1a" stroke="#aaffcc" stroke-width="1.5"/>
+    <text x="740" y="466" text-anchor="middle" font-size="8" fill="#aaffcc">220Ω</text>
+    <line x1="738" y1="341" x2="738" y2="456" stroke="#aaffcc" stroke-width="1.5"/>
+    <line x1="738" y1="470" x2="738" y2="490" stroke="#aaffcc" stroke-width="1.5"/>
+
+    <rect x="622" y="445" width="76" height="60" rx="28" fill="#0a1a0a" stroke="#4dff9e" stroke-width="2"/>
+    <circle cx="660" cy="462" r="7" fill="none" stroke="#4dff9e" stroke-width="1.5"/>
+    <line x1="660" y1="455" x2="660" y2="469" stroke="#4dff9e" stroke-width="1"/>
+    <line x1="653" y1="462" x2="667" y2="462" stroke="#4dff9e" stroke-width="1"/>
+    <text x="660" y="497" text-anchor="middle" font-size="8" fill="#4dff9e">BTN 3</text>
+
+    <line x1="698" y1="462" x2="740" y2="462" stroke="#4dff9e" stroke-width="1.5"/>
+    <line x1="740" y1="462" x2="740" y2="326" stroke="#4dff9e" stroke-width="1.5"/>
+    <line x1="666" y1="180" x2="738" y2="180" stroke="#ff6666" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="738" y1="180" x2="738" y2="456" stroke="#ff6666" stroke-width="1" stroke-dasharray="3,3"/>
+
+    <line x1="622" y1="475" x2="605" y2="475" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="605" y1="475" x2="605" y2="205" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="605" y1="205" x2="650" y2="205" stroke="#44ff44" stroke-width="1"/>
+
+    <rect x="632" y="232" width="76" height="16" rx="3" fill="#0a0a14" stroke="#666" stroke-width="1"/>
+    <text x="670" y="244" text-anchor="middle" font-size="8" fill="#888">4-pin JST IN</text>
+    <circle cx="643" cy="238" r="2" fill="#f0e040"/>
+    <circle cx="654" cy="238" r="2" fill="#ff9f4d"/>
+    <circle cx="665" cy="238" r="2" fill="#ff6666"/>
+    <circle cx="676" cy="238" r="2" fill="#44ff44"/>
+
+    <rect x="632" y="580" width="76" height="16" rx="3" fill="#0a0a14" stroke="#666" stroke-width="1"/>
+    <text x="670" y="592" text-anchor="middle" font-size="8" fill="#888">4-pin JST OUT</text>
+    <circle cx="643" cy="586" r="2" fill="#f0e040"/>
+    <circle cx="654" cy="586" r="2" fill="#ff9f4d"/>
+    <circle cx="665" cy="586" r="2" fill="#ff6666"/>
+    <circle cx="676" cy="586" r="2" fill="#44ff44"/>
+  </g>
+
+  <!-- ═══════════════════ MODULE 4 ═══════════════════ -->
+  <g id="mod4">
+    <rect x="790" y="250" width="140" height="340" rx="8" fill="#13131a" stroke="#ff9f4d" stroke-width="2"/>
+    <rect x="790" y="250" width="140" height="22" rx="8" fill="#ff9f4d22"/>
+    <text x="860" y="265" text-anchor="middle" font-size="11" font-weight="bold" fill="#ff9f4d">MODULE 4</text>
+    <text x="860" y="278" text-anchor="middle" font-size="8" fill="#ff9f4d99">PLAYER 4 · 0x23</text>
+
+    <rect x="810" y="295" width="100" height="80" rx="4" fill="#1a1020" stroke="#aa44aa" stroke-width="1.5"/>
+    <text x="860" y="313" text-anchor="middle" font-size="10" font-weight="bold" fill="#cc88cc">PCF8574</text>
+    <text x="818" y="330" font-size="8" fill="#aaa">SDA</text>
+    <text x="818" y="345" font-size="8" fill="#aaa">SCL</text>
+    <text x="818" y="360" font-size="8" fill="#aaa">VCC</text>
+    <text x="818" y="375" font-size="8" fill="#aaa">GND</text>
+    <text x="896" y="330" text-anchor="end" font-size="8" fill="#aaa">P0</text>
+    <text x="896" y="345" text-anchor="end" font-size="8" fill="#aaa">P1</text>
+
+    <line x1="840" y1="130" x2="840" y2="326" stroke="#f0e040" stroke-width="1.5"/>
+    <line x1="840" y1="326" x2="810" y2="326" stroke="#f0e040" stroke-width="1.5"/>
+    <line x1="848" y1="155" x2="848" y2="341" stroke="#ff9f4d" stroke-width="1.5"/>
+    <line x1="848" y1="341" x2="810" y2="341" stroke="#ff9f4d" stroke-width="1.5"/>
+    <line x1="856" y1="180" x2="856" y2="356" stroke="#ff6666" stroke-width="1.5"/>
+    <line x1="856" y1="356" x2="810" y2="356" stroke="#ff6666" stroke-width="1.5"/>
+    <line x1="864" y1="205" x2="864" y2="371" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="864" y1="371" x2="810" y2="371" stroke="#44ff44" stroke-width="1.5"/>
+
+    <rect x="805" y="390" width="110" height="28" rx="3" fill="#0e0e14" stroke="#333" stroke-width="1"/>
+    <text x="860" y="403" text-anchor="middle" font-size="8" fill="#aaa">Address: A2=0 A1=1 A0=1</text>
+    <text x="860" y="414" text-anchor="middle" font-size="8" fill="#cc88cc">→ 0x23</text>
+
+    <line x1="910" y1="326" x2="925" y2="326" stroke="#ff9f4d" stroke-width="1.5"/>
+    <line x1="925" y1="326" x2="925" y2="462" stroke="#ff9f4d" stroke-width="1.5"/>
+    <line x1="888" y1="341" x2="923" y2="341" stroke="#ffcc88" stroke-width="1.5"/>
+    <rect x="909" y="456" width="32" height="14" rx="2" fill="#1a1a1a" stroke="#ffcc88" stroke-width="1.5"/>
+    <text x="925" y="466" text-anchor="middle" font-size="8" fill="#ffcc88">220Ω</text>
+    <line x1="923" y1="341" x2="923" y2="456" stroke="#ffcc88" stroke-width="1.5"/>
+    <line x1="923" y1="470" x2="923" y2="490" stroke="#ffcc88" stroke-width="1.5"/>
+
+    <rect x="812" y="445" width="76" height="60" rx="28" fill="#1a120a" stroke="#ff9f4d" stroke-width="2"/>
+    <circle cx="850" cy="462" r="7" fill="none" stroke="#ff9f4d" stroke-width="1.5"/>
+    <line x1="850" y1="455" x2="850" y2="469" stroke="#ff9f4d" stroke-width="1"/>
+    <line x1="843" y1="462" x2="857" y2="462" stroke="#ff9f4d" stroke-width="1"/>
+    <text x="850" y="497" text-anchor="middle" font-size="8" fill="#ff9f4d">BTN 4</text>
+
+    <line x1="888" y1="462" x2="925" y2="462" stroke="#ff9f4d" stroke-width="1.5"/>
+    <line x1="925" y1="462" x2="925" y2="326" stroke="#ff9f4d" stroke-width="1.5"/>
+    <line x1="856" y1="180" x2="923" y2="180" stroke="#ff6666" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="923" y1="180" x2="923" y2="456" stroke="#ff6666" stroke-width="1" stroke-dasharray="3,3"/>
+
+    <line x1="812" y1="475" x2="795" y2="475" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="795" y1="475" x2="795" y2="205" stroke="#44ff44" stroke-width="1.5"/>
+    <line x1="795" y1="205" x2="840" y2="205" stroke="#44ff44" stroke-width="1"/>
+
+    <rect x="822" y="232" width="76" height="16" rx="3" fill="#0a0a14" stroke="#666" stroke-width="1"/>
+    <text x="860" y="244" text-anchor="middle" font-size="8" fill="#888">4-pin JST IN</text>
+    <circle cx="833" cy="238" r="2" fill="#f0e040"/>
+    <circle cx="844" cy="238" r="2" fill="#ff9f4d"/>
+    <circle cx="855" cy="238" r="2" fill="#ff6666"/>
+    <circle cx="866" cy="238" r="2" fill="#44ff44"/>
+
+    <!-- No JST OUT on last module — terminator note -->
+    <rect x="822" y="580" width="76" height="16" rx="3" fill="#0a0a14" stroke="#444" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="860" y="592" text-anchor="middle" font-size="8" fill="#555">end of chain</text>
+  </g>
+
+  <!-- Daisy chain cables between modules (drawn below the module boxes) -->
+  <!-- M1 OUT → M2 IN  (y≈610, 4 coloured lines) -->
+  <line x1="328" y1="610" x2="442" y2="610" stroke="#f0e040" stroke-width="2"/>
+  <line x1="328" y1="615" x2="442" y2="615" stroke="#ff9f4d" stroke-width="2"/>
+  <line x1="328" y1="620" x2="442" y2="620" stroke="#ff6666" stroke-width="2"/>
+  <line x1="328" y1="625" x2="442" y2="625" stroke="#44ff44" stroke-width="2"/>
+  <text x="385" y="640" text-anchor="middle" font-size="8" fill="#444">cable</text>
+
+  <!-- M2 OUT → M3 IN -->
+  <line x1="518" y1="610" x2="632" y2="610" stroke="#f0e040" stroke-width="2"/>
+  <line x1="518" y1="615" x2="632" y2="615" stroke="#ff9f4d" stroke-width="2"/>
+  <line x1="518" y1="620" x2="632" y2="620" stroke="#ff6666" stroke-width="2"/>
+  <line x1="518" y1="625" x2="632" y2="625" stroke="#44ff44" stroke-width="2"/>
+  <text x="575" y="640" text-anchor="middle" font-size="8" fill="#444">cable</text>
+
+  <!-- M3 OUT → M4 IN -->
+  <line x1="708" y1="610" x2="822" y2="610" stroke="#f0e040" stroke-width="2"/>
+  <line x1="708" y1="615" x2="822" y2="615" stroke="#ff9f4d" stroke-width="2"/>
+  <line x1="708" y1="620" x2="822" y2="620" stroke="#ff6666" stroke-width="2"/>
+  <line x1="708" y1="625" x2="822" y2="625" stroke="#44ff44" stroke-width="2"/>
+  <text x="765" y="640" text-anchor="middle" font-size="8" fill="#444">cable</text>
+
+  <!-- Arduino → M1 cable -->
+  <line x1="95" y1="610" x2="252" y2="610" stroke="#f0e040" stroke-width="2"/>
+  <line x1="95" y1="615" x2="252" y2="615" stroke="#ff9f4d" stroke-width="2"/>
+  <line x1="95" y1="620" x2="252" y2="620" stroke="#ff6666" stroke-width="2"/>
+  <line x1="95" y1="625" x2="252" y2="625" stroke="#44ff44" stroke-width="2"/>
+  <!-- Arduino connector -->
+  <rect x="50" y="604" width="46" height="26" rx="3" fill="#1a2a1a" stroke="#2a5a2a" stroke-width="1"/>
+  <text x="73" y="616" text-anchor="middle" font-size="7" fill="#4daa4d">Arduino</text>
+  <text x="73" y="626" text-anchor="middle" font-size="7" fill="#4daa4d">4-pin out</text>
+  <text x="175" y="640" text-anchor="middle" font-size="8" fill="#444">cable</text>
+
+  <!-- I2C pull-up note -->
+  <rect x="20" y="295" width="150" height="50" rx="4" fill="#0e0e18" stroke="#333" stroke-width="1"/>
+  <text x="95" y="312" text-anchor="middle" font-size="9" font-weight="bold" fill="#cc88cc">I²C Pull-ups</text>
+  <text x="95" y="326" text-anchor="middle" font-size="8" fill="#aaa">Add 4.7kΩ on SDA+SCL</text>
+  <text x="95" y="338" text-anchor="middle" font-size="8" fill="#aaa">to 5V near Arduino</text>
+
+  <!-- Legend -->
+  <rect x="20" y="360" width="150" height="120" rx="4" fill="#0e0e18" stroke="#333" stroke-width="1"/>
+  <text x="95" y="378" text-anchor="middle" font-size="9" font-weight="bold" fill="#f0e040">LEGEND</text>
+  <line x1="30" y1="392" x2="60" y2="392" stroke="#f0e040" stroke-width="2"/>
+  <text x="68" y="396" font-size="8" fill="#ccc">SDA (data)</text>
+  <line x1="30" y1="407" x2="60" y2="407" stroke="#ff9f4d" stroke-width="2"/>
+  <text x="68" y="411" font-size="8" fill="#ccc">SCL (clock)</text>
+  <line x1="30" y1="422" x2="60" y2="422" stroke="#ff6666" stroke-width="2"/>
+  <text x="68" y="426" font-size="8" fill="#ccc">5V power</text>
+  <line x1="30" y1="437" x2="60" y2="437" stroke="#44ff44" stroke-width="2"/>
+  <text x="68" y="441" font-size="8" fill="#ccc">GND</text>
+  <line x1="30" y1="452" x2="60" y2="452" stroke="#ff6666" stroke-width="2" stroke-dasharray="3,3"/>
+  <text x="68" y="456" font-size="8" fill="#ccc">5V → LED anode</text>
+
+  <!-- caption -->
+  <text x="510" y="690" text-anchor="middle" font-size="9" fill="#333">PCF8574 P1 sinks LED current (active LOW) · P0 reads button via internal pull-up · Add 100nF decoupling cap on each PCF8574 VCC pin</text>
+</svg>
