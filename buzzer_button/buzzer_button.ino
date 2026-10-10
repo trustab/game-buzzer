@@ -1,12 +1,12 @@
-// buzzer_button.ino — PoC button unit: one button, one LED, 3xAA, ESP-NOW to hub.
+// buzzer_button.ino — PoC button unit: one button, one LED, 3xAAA, ESP-NOW to hub.
 // Board: ESP32-C3 SuperMini ("ESP32C3 Dev Module", USB CDC On Boot: Enabled)
 // No extra libraries needed.
 //
 // Wiring:
-//   3xAA +  -> 5V pin        3xAA -  -> GND
-//   Button  -> GPIO4 and GND (internal pull-up)
+//   3xAAA + -> 5V pin        3xAAA - -> GND
+//   Button  -> GPIO3 and GND (internal pull-up)
 //   LED     -> GPIO5 -> 150 ohm -> LED anode, LED cathode -> GND
-//   Battery divider: BAT+ -> 100k -> GPIO3 -> 100k -> GND  (+100nF GPIO3->GND, optional)
+//   Battery divider (not fitted yet): BAT+ -> 100k -> BATT_PIN -> 100k -> GND
 
 #include <WiFi.h>
 #include <esp_wifi.h>
@@ -16,9 +16,9 @@
 #ifndef PLAYER_ID
 #define PLAYER_ID   1     // per button: 1-4, or set by tools/flash.ps1 -Player N
 #endif
-#define BUTTON_PIN  4
+#define BUTTON_PIN  3
 #define LED_PIN     5
-#define BATT_PIN    3
+// #define BATT_PIN 4     // ADC pin for the battery divider; leave undefined until fitted
 
 #define HELLO_MS        5000   // battery heartbeat interval
 #define HUB_TIMEOUT_MS  2000   // no STATE heard for this long = hub lost
@@ -49,10 +49,15 @@ void onEspNowRecv(const esp_now_recv_info_t*, const uint8_t* data, int len) {
   lastHeard = millis();
 }
 
+// Returns 0 without a divider; the hub treats that as "no battery" rather than low.
 uint16_t readBatteryMv() {
+#ifdef BATT_PIN
   uint32_t sum = 0;
   for (int i = 0; i < 8; i++) sum += analogReadMilliVolts(BATT_PIN);
   return (sum / 8) * 2;   // divider halves the voltage
+#else
+  return 0;
+#endif
 }
 
 void send(MsgType type, uint16_t round, uint16_t battMv) {
@@ -79,14 +84,18 @@ void setup() {
   Serial.begin(115200);
   pinMode(BUTTON_PIN, INPUT_PULLUP);
   pinMode(LED_PIN, OUTPUT);
+#ifdef BATT_PIN
   analogSetAttenuation(ADC_11db);
+#endif
 
   WiFi.mode(WIFI_STA);
   WiFi.disconnect();
   esp_wifi_set_channel(BUZZ_CHANNEL, WIFI_SECOND_CHAN_NONE);
   esp_wifi_set_ps(WIFI_PS_NONE);   // keep the radio awake so we hear round starts instantly
-  // Many SuperMini clones have a poor antenna match. If packets drop, try:
-  // WiFi.setTxPower(WIFI_POWER_8_5dBm);
+  // Lower TX power: smaller current spikes (AAA cells sag under load) and it
+  // often works better on SuperMini clones with a poor antenna match.
+  // Plenty for a room; raise it if presses get lost at a distance.
+  WiFi.setTxPower(WIFI_POWER_8_5dBm);
 
   if (esp_now_init() != ESP_OK) {
     Serial.println("ESP-NOW init failed");
@@ -134,7 +143,9 @@ void loop() {
   if (millis() - lastHello > HELLO_MS) {
     uint16_t mv = readBatteryMv();
     send(MSG_HELLO, round, mv);
+#ifdef BATT_PIN
     Serial.printf("Battery %.2f V\n", mv / 1000.0);
+#endif
     lastHello = millis();
   }
 
